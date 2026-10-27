@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="nn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Krambua Bensin &amp; Storkiosk – Meny og prisar</title>
+<meta name="description" content="Meny, prisar og opningstider for Krambua Bensin &amp; Storkiosk i Skånevik. Bestill på telefon +47 537 56 888.">
+<meta name="theme-color" content="#F7F5F0">
+<link rel="canonical" href="https://krambua-skånevik.no/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Krambua Bensin &amp; Storkiosk">
+<meta property="og:title" content="Krambua Bensin &amp; Storkiosk – Meny">
+<meta property="og:description" content="Meny og prisar hos Krambua Bensin &amp; Storkiosk i Skånevik. Burgerar, kylling, pommes, kebab og meir – rett ved sjøen.">
+<meta property="og:url" content="https://krambua-skånevik.no/">
+<meta property="og:image" content="https://krambua-skånevik.no/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="192x192" href="images/icon-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F5F0;
+  --paper:#FFFFFF;
+  --ink:#1F1B18;
+  --soft:#6F675E;
+  --faint:#A39B90;
+  --line:#E4DFD5;
+  --accent:#A8402F;
+  --accent-deep:#8A3224;
+  --ok:#4C7A4C;
+  --bar-h:64px;
+  --gutter:clamp(20px,5vw,48px);
+  --maxw:1080px;
+  --read:640px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Work Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--bg);color:var(--ink);
+  font-weight:400;font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;display:flex;flex-direction:column;
+  padding-top:calc(var(--bar-h) + env(safe-area-inset-top));
+}
+body.nav-open{overflow:hidden}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block;max-width:100%}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:400;line-height:1.1;letter-spacing:-.01em}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.read{max-width:var(--read)}
+svg.i{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ---------- Top bar ---------- */
+.bar{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  height:calc(var(--bar-h) + env(safe-area-inset-top));
+  padding-top:env(safe-area-inset-top);
+  background:rgba(247,245,240,.92);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.bar-in{height:var(--bar-h);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand img{height:30px;width:auto}
+.bar-right{display:flex;align-items:center;gap:6px}
+.lang{position:relative}
+.lang-btn{display:flex;align-items:center;gap:6px;padding:9px 10px;border-radius:999px;font-size:13px;font-weight:500;letter-spacing:.04em;color:var(--soft);transition:background .2s}
+.lang-btn:hover{background:rgba(0,0,0,.04)}
+.lang-btn .flag{font-size:16px;line-height:1}
+.lang-menu{position:absolute;right:0;top:calc(100% + 8px);min-width:170px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 14px 40px rgba(31,27,24,.12);opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s var(--ease)}
+.lang-menu.open{opacity:1;visibility:visible;transform:none}
+.lang-menu button{display:flex;width:100%;gap:10px;align-items:center;text-align:left;padding:9px 12px;border-radius:8px;font-size:14px}
+.lang-menu button:hover{background:var(--bg)}
+.lang-menu button.active{font-weight:600}
+.burger{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;position:relative;transition:background .2s}
+.burger:hover{background:rgba(0,0,0,.05)}
+.burger span{position:absolute;left:12px;right:12px;height:1.5px;background:var(--ink);transition:transform .35s var(--ease),opacity .2s,top .35s var(--ease)}
+.burger span:nth-child(1){top:16px}
+.burger span:nth-child(2){top:21.5px}
+.burger span:nth-child(3){top:27px}
+body.nav-open .burger span:nth-child(1){top:21.5px;transform:rotate(45deg)}
+body.nav-open .burger span:nth-child(2){opacity:0}
+body.nav-open .burger span:nth-child(3){top:21.5px;transform:rotate(-45deg)}
+
+/* ---------- Full-screen menu ---------- */
+.drawer{
+  position:fixed;inset:0;z-index:55;background:var(--bg);
+  padding:calc(var(--bar-h) + env(safe-area-inset-top) + 28px) 0 calc(28px + env(safe-area-inset-bottom));
+  display:flex;flex-direction:column;overflow-y:auto;
+  opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s;
+}
+body.nav-open .drawer{opacity:1;visibility:visible}
+.drawer nav{display:flex;flex-direction:column}
+.drawer nav a{
+  display:flex;align-items:baseline;gap:18px;
+  font-family:"Fraunces",Georgia,serif;font-size:clamp(30px,7vw,52px);font-weight:300;letter-spacing:-.02em;
+  text-decoration:none;padding:10px 0;border-bottom:1px solid var(--line);
+  opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease),color .2s;
+}
+body.nav-open .drawer nav a{opacity:1;transform:none}
+body.nav-open .drawer nav a:nth-child(1){transition-delay:.05s}
+body.nav-open .drawer nav a:nth-child(2){transition-delay:.09s}
+body.nav-open .drawer nav a:nth-child(3){transition-delay:.13s}
+body.nav-open .drawer nav a:nth-child(4){transition-delay:.17s}
+body.nav-open .drawer nav a:nth-child(5){transition-delay:.21s}
+body.nav-open .drawer nav a:nth-child(6){transition-delay:.25s}
+body.nav-open .drawer nav a:nth-child(7){transition-delay:.29s}
+.drawer nav a .n{font-family:"Work Sans",sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;color:var(--faint);min-width:22px}
+.drawer nav a.current{color:var(--accent)}
+.drawer nav a:hover{color:var(--accent)}
+.drawer nav a[hidden]{display:none}
+.drawer-foot{margin-top:auto;padding-top:32px;display:flex;flex-wrap:wrap;gap:8px 28px;align-items:center;justify-content:space-between;font-size:14px;color:var(--soft)}
+.drawer-foot a{text-decoration:none;color:var(--ink);font-weight:500}
+.drawer-lang{display:flex;gap:4px;flex-wrap:wrap}
+.drawer-lang button{padding:6px 11px;border-radius:999px;font-size:13px;font-weight:500;border:1px solid var(--line);color:var(--soft)}
+.drawer-lang button.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* ---------- Pages ---------- */
+main{flex:1}
+.page{display:none}
+.page.active{display:block;animation:pageIn .55s var(--ease) both}
+@keyframes pageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.page.active{animation:none}*{transition:none!important}}
+
+.page-head{padding:clamp(36px,8vw,84px) 0 clamp(24px,5vw,44px)}
+.kicker{font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.page-head h1{font-size:clamp(40px,8vw,76px);font-weight:300;letter-spacing:-.025em}
+.lead{margin-top:16px;color:var(--soft);font-size:clamp(16px,2vw,18px);max-width:var(--read)}
+.crumb{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--soft);text-decoration:none;margin-bottom:22px;letter-spacing:.02em}
+.crumb:hover{color:var(--ink)}
+
+/* ---------- Home ---------- */
+.hero{position:relative}
+.hero-img{aspect-ratio:16/9;max-height:42vh;width:100%;object-fit:cover;object-position:50% 60%;background:var(--line)}
+@media (min-width:900px){.hero-img{aspect-ratio:21/6;max-height:30vh}}
+.hero-copy{padding:clamp(28px,5vw,56px) 0 clamp(8px,2vw,20px)}
+.hero-copy h1{font-size:clamp(36px,7vw,72px);font-weight:300;letter-spacing:-.025em;max-width:14ch}
+.hero-copy .lead{max-width:44ch}
+.hero-actions{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-size:15px;font-weight:500;text-decoration:none;transition:transform .25s var(--ease),background .2s,color .2s}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.solid:hover{background:var(--accent)}
+.btn.ghost{border:1px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.btn:active{transform:scale(.98)}
+.quick{margin-top:clamp(36px,7vw,72px);border-top:1px solid var(--line)}
+.row-link{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .3s var(--ease),color .2s}
+.row-link:hover{padding-left:10px;color:var(--accent)}
+.row-link .t{font-family:"Fraunces",Georgia,serif;font-size:clamp(24px,4.4vw,36px);font-weight:300;letter-spacing:-.015em}
+.row-link .s{display:block;font-family:"Work Sans",sans-serif;font-size:14px;color:var(--soft);margin-top:4px}
+.row-link .ar{font-size:22px;color:var(--faint);transition:transform .3s var(--ease),color .2s}
+.row-link:hover .ar{transform:translateX(4px);color:var(--accent)}
+.hours-strip{display:flex;flex-wrap:wrap;gap:6px 28px;padding:28px 0 0;font-size:14px;color:var(--soft)}
+.hours-strip b{color:var(--ink);font-weight:500}
+
+/* ---------- Menu index & category ---------- */
+.cat-list{border-top:1px solid var(--line)}
+.cat-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;padding:24px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .3s var(--ease),color .2s}
+.cat-row:hover{padding-left:10px;color:var(--accent)}
+.cat-row .t{font-family:"Fraunces",Georgia,serif;font-size:clamp(26px,5vw,42px);font-weight:300;letter-spacing:-.02em}
+.cat-row .ar{font-size:22px;color:var(--faint)}
+.cat-row:hover .ar{color:var(--accent)}
+.menu-extra{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:28px;font-size:14px}
+.menu-extra a{color:var(--soft);text-underline-offset:4px}
+.menu-extra a:hover{color:var(--ink)}
+.menu-note{margin-top:36px;padding:20px 0;font-size:15px;color:var(--soft)}
+.menu-note a{color:var(--ink);font-weight:500;text-decoration:none;border-bottom:1px solid var(--ink)}
+
+.category-note{display:inline-block;margin-bottom:22px;font-size:14px;color:var(--ok);font-weight:500}
+.dishes{list-style:none;border-top:1px solid var(--line)}
+.dishes li{padding:20px 0;border-bottom:1px solid var(--line)}
+.item-row{display:flex;align-items:baseline;gap:14px}
+.item-row .name{font-size:clamp(17px,2.4vw,20px);font-weight:500}
+.item-row::after{content:"";order:2;flex:1;border-bottom:1px dotted var(--faint);transform:translateY(-4px);min-width:16px}
+.item-row .price{order:3;font-family:"Fraunces",Georgia,serif;font-size:clamp(19px,2.6vw,22px);white-space:nowrap}
+.with-drink{display:block;margin-top:4px;font-size:14px;color:var(--soft)}
+.with-drink b{font-weight:500;color:var(--ink)}
+.choice-note{display:block;margin-top:4px;font-size:13px;color:var(--faint);font-style:italic}
+.addons-inline{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.addons-inline .tag{font-size:12.5px;padding:4px 11px;border:1px solid var(--line);border-radius:999px;color:var(--soft);background:var(--paper)}
+.addon-box{margin-top:36px;padding:26px;background:var(--paper);border:1px solid var(--line);border-radius:6px}
+.addon-box h3{font-size:22px}
+.addon-box .hint{font-size:14px;color:var(--soft);margin:4px 0 16px}
+.addon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.addon-chip{display:flex;justify-content:space-between;gap:8px;padding:11px 14px;border:1px solid var(--line);border-radius:4px;font-size:15px}
+.addon-chip span:last-child{font-weight:500}
+.cat-pager{display:flex;justify-content:space-between;gap:14px;margin-top:48px;padding-top:24px;border-top:1px solid var(--ink)}
+.cat-pager a{display:flex;flex-direction:column;gap:2px;text-decoration:none;max-width:48%}
+.cat-pager a.next{text-align:right;margin-left:auto}
+.cat-pager small{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.cat-pager span.l{font-family:"Fraunces",Georgia,serif;font-size:clamp(19px,3.2vw,26px);font-weight:300}
+.cat-pager a:hover span.l{color:var(--accent)}
+.call-line{margin-top:28px;text-align:center;font-size:15px;color:var(--soft)}
+.call-line a{display:inline-block;margin-top:4px;font-family:"Fraunces",Georgia,serif;font-size:26px;color:var(--ink);text-decoration:none}
+
+/* ---------- Framside ---------- */
+body.is-home .brand{visibility:hidden}
+.home{display:flex;flex-direction:column}
+.home-imgwrap{width:100%}
+.home-img{display:block;width:100%;height:auto;animation:homeImg 1.2s var(--ease) both;
+  -webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,#000 72%,transparent 100%)}
+@keyframes homeImg{from{opacity:0;transform:scale(1.015)}to{opacity:1;transform:none}}
+.home-panel{text-align:center;padding:0 0 clamp(32px,6vw,56px);margin-top:-8px}
+.home-panel img.logo{height:clamp(54px,9vw,76px);width:auto;margin:0 auto 18px;animation:pageIn .9s .2s var(--ease) both}
+.home-panel .tag{font-family:"Fraunces",Georgia,serif;font-weight:300;font-size:clamp(22px,3.6vw,32px);letter-spacing:-.015em;line-height:1.25;max-width:22ch;margin:0 auto;animation:pageIn .9s .3s var(--ease) both}
+.home-panel .small{margin-top:10px;font-size:14.5px;color:var(--soft);animation:pageIn .9s .4s var(--ease) both}
+.home-panel .hero-actions{justify-content:center;animation:pageIn .9s .5s var(--ease) both}
+@media (min-width:900px){
+  .home{display:grid;align-items:center;min-height:calc(100vh - var(--bar-h) - env(safe-area-inset-top));min-height:calc(100svh - var(--bar-h) - env(safe-area-inset-top));overflow:hidden}
+  .home-imgwrap{grid-area:1/1;justify-self:end;width:min(66vw,1240px);position:relative;z-index:1}
+  .home-img{
+    max-height:calc(100svh - var(--bar-h) - 24px);object-fit:contain;
+    -webkit-mask-image:linear-gradient(to right,transparent 0,transparent 8%,rgba(0,0,0,.55) 26%,#000 52%),linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);
+    mask-image:linear-gradient(to right,transparent 0,transparent 8%,rgba(0,0,0,.55) 26%,#000 52%),linear-gradient(to bottom,transparent 0,#000 7%,#000 93%,transparent 100%);
+    -webkit-mask-composite:source-in;mask-composite:intersect}
+  .home-panel{grid-area:1/1;z-index:2;justify-self:start;--padL:max(var(--gutter),calc((100vw - var(--maxw))/2 + var(--gutter)));width:calc(var(--padL) + 480px);text-align:left;margin:0;padding:0 0 0 var(--padL)}
+  .home-panel .wrap{padding:0;max-width:none}
+  .home-panel img.logo{height:clamp(70px,7vw,96px);margin:0 0 26px}
+  .home-panel .tag{margin:0;max-width:14ch;font-size:clamp(30px,3.2vw,44px)}
+  .home-panel .hero-actions{justify-content:flex-start;margin-top:30px}
+  .home-panel .btn.ghost{background:var(--bg)}
+}
+
+/* ---------- Kategori-faner ---------- */
+.chips{position:sticky;top:calc(var(--bar-h) + env(safe-area-inset-top));z-index:40;background:rgba(247,245,240,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.chips-in{display:flex;gap:8px;padding:12px 0;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips-in::-webkit-scrollbar{display:none}
+.chip{flex:none;padding:9px 18px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:14.5px;font-weight:500;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (min-width:900px){.chips-in{flex-wrap:wrap;overflow:visible}}
+.cat-title{font-size:clamp(30px,5vw,46px);font-weight:300;letter-spacing:-.02em;margin:clamp(24px,4vw,40px) 0 16px}
+#catBody.fade{animation:pageIn .4s var(--ease) both}
+
+/* ---------- Deal ---------- */
+.deal{display:grid;gap:18px}
+@media (min-width:760px){.deal{grid-template-columns:1fr 1fr}}
+.deal-card{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:clamp(24px,4vw,36px);display:flex;flex-direction:column;min-height:250px;overflow:hidden}
+.deal-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent)}
+.deal-badge{align-self:flex-start;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.deal-name{margin-top:14px;font-family:"Fraunces",Georgia,serif;font-size:clamp(26px,4vw,34px);font-weight:300;line-height:1.15;letter-spacing:-.015em}
+.deal-desc{margin-top:12px;color:var(--soft);font-size:15px}
+.deal-foot{margin-top:auto;padding-top:22px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.deal-price{font-family:"Fraunces",Georgia,serif;font-size:clamp(34px,5vw,46px);color:var(--accent-deep);line-height:1}
+.deal-old{font-size:17px;color:var(--faint);text-decoration:line-through}
+.deal-valid{margin-left:auto;font-size:12.5px;color:var(--soft);letter-spacing:.04em}
+.week-note{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:20px}
+.empty{padding:34px;border:1px dashed var(--faint);border-radius:6px;color:var(--soft);text-align:center}
+
+/* ---------- Info / contact / about ---------- */
+.split{display:grid;gap:clamp(28px,5vw,64px)}
+@media (min-width:860px){.split{grid-template-columns:1fr 1fr;align-items:start}}
+.photo{width:100%;object-fit:contain;background:var(--line);border-radius:2px}
+.photo{height:auto}
+.photo.wide,.photo.tall,.photo.land{aspect-ratio:auto}
+.figure figcaption{margin-top:10px;font-size:12.5px;color:var(--faint);letter-spacing:.02em}
+.block{padding:26px 0;border-top:1px solid var(--line)}
+.block h2{font-size:14px;font-family:"Work Sans",sans-serif;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:12px}
+.block .big{font-family:"Fraunces",Georgia,serif;font-size:clamp(26px,4vw,36px);font-weight:300;letter-spacing:-.015em;line-height:1.2}
+.block p+p{margin-top:4px}
+.block .muted{color:var(--soft)}
+.big-link{display:inline-block;font-family:"Fraunces",Georgia,serif;font-size:clamp(32px,6vw,52px);font-weight:300;letter-spacing:-.02em;text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s,color .2s}
+.big-link:hover{color:var(--accent);border-color:var(--accent)}
+.link-list{display:flex;flex-direction:column}
+.link-list a{display:flex;align-items:center;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .25s var(--ease),color .2s}
+.link-list a:first-child{border-top:1px solid var(--line)}
+.link-list a:hover{padding-left:8px;color:var(--accent)}
+.link-list .i{font-size:18px;color:var(--soft)}
+.map{margin-top:clamp(28px,5vw,52px);aspect-ratio:16/9;min-height:280px;width:100%;border:1px solid var(--line);border-radius:2px;overflow:hidden;background:var(--line)}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.25) contrast(.98)}
+.about-text p{font-size:clamp(17px,2.2vw,19px);line-height:1.7;color:#3b352f;margin-bottom:1.15em}
+.about-text p.pull{font-family:"Fraunces",Georgia,serif;font-size:clamp(24px,3.6vw,32px);font-weight:300;line-height:1.3;color:var(--ink);letter-spacing:-.01em;margin:1.4em 0}
+.about-gallery{display:grid;gap:clamp(16px,3vw,28px);margin:clamp(28px,5vw,56px) 0}
+@media (min-width:760px){.about-gallery{grid-template-columns:1.25fr 1fr;align-items:start}}
+.fullbleed{width:100%}
+
+/* ---------- Event ---------- */
+.event{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:clamp(24px,4vw,40px)}
+.event .nm{font-family:"Fraunces",Georgia,serif;font-size:clamp(30px,5vw,44px);font-weight:300;margin:10px 0 18px}
+.event .meta{display:grid;gap:8px;margin-bottom:18px;color:var(--soft)}
+.event .meta div{display:flex;gap:10px;align-items:center}
+.event .prize{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);font-weight:500}
+
+/* ---------- Allergens ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin:20px 0 6px;font-size:14px;color:var(--soft)}
+.legend b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;margin-right:8px;font-weight:600;font-size:12px}
+.legend .y{background:var(--ink);color:var(--bg)}
+.legend .w{background:#E9C97B;color:#5a4410}
+.swipe{display:none;font-size:12.5px;color:var(--faint);margin:6px 0}
+@media (max-width:900px){.swipe{display:block}}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--paper);-webkit-overflow-scrolling:touch}
+table{border-collapse:separate;border-spacing:0;width:100%;min-width:900px;font-size:13.5px}
+th,td{padding:10px 8px;text-align:center;border-bottom:1px solid var(--line)}
+th{font-weight:500;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--soft);background:var(--bg);position:sticky;top:0}
+th.matvare-col,td.matvare{text-align:left;position:sticky;left:0;background:var(--paper);min-width:150px;font-weight:500;border-right:1px solid var(--line)}
+th.matvare-col{background:var(--bg);z-index:2}
+tr:last-child td{border-bottom:0}
+td.yes,td.may{font-size:0}
+td.yes::before{content:"✓";display:inline-block;width:22px;height:22px;line-height:22px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:12px;font-weight:600;text-align:center}
+td.may::before{content:"△";font-size:15px;color:#B5862A}
+
+/* ---------- Footer ---------- */
+footer{margin-top:clamp(56px,9vw,110px);border-top:1px solid var(--line);padding:36px 0 calc(36px + env(safe-area-inset-bottom));background:var(--bg)}
+.foot-grid{display:grid;gap:24px}
+@media (min-width:760px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+.foot-grid img{height:30px;width:auto;margin-bottom:14px}
+.foot-grid h4{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.foot-grid p,.foot-grid a{font-size:14.5px;color:var(--soft);text-decoration:none;display:block}
+.foot-grid a:hover{color:var(--accent)}
+.copyright{margin-top:30px;font-size:12.5px;color:var(--faint)}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="brand" href="#/" aria-label="Krambua"><img src="images/logo.png" alt="Krambua Bensin og Storkiosk"></a>
+    <div class="bar-right">
+      <div class="lang">
+        <button type="button" class="lang-btn" id="langToggle" aria-haspopup="true" aria-expanded="false"><span class="flag">🇳🇴</span><span class="code">NN</span></button>
+        <div class="lang-menu" id="langMenu" role="menu">
+          <button type="button" data-lang="nn" role="menuitem">🇳🇴 Nynorsk</button>
+          <button type="button" data-lang="en" role="menuitem">🇬🇧 English</button>
+          <button type="button" data-lang="de" role="menuitem">🇩🇪 Deutsch</button>
+          <button type="button" data-lang="fr" role="menuitem">🇫🇷 Français</button>
+          <button type="button" data-lang="it" role="menuitem">🇮🇹 Italiano</button>
+        </div>
+      </div>
+      <button type="button" class="burger" id="burger" aria-label="Meny" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<aside class="drawer" id="drawer" aria-label="Hovudmeny">
+  <div class="wrap" style="display:flex;flex-direction:column;flex:1">
+    <nav>
+      <a href="#/" data-route-link="home"><span data-i18n="navHome">Framside</span></a>
+      <a href="#/meny" data-route-link="meny"><span data-i18n="navMenu">Meny</span></a>
+      <a href="#/tilbod" data-route-link="tilbod"><span data-i18n="dealTitle">Vekas tilbod</span></a>
+      <a href="#/informasjon" data-route-link="informasjon"><span data-i18n="navInfo">Informasjon</span></a>
+      <a href="#/kontakt" data-route-link="kontakt"><span data-i18n="contactTitle">Kontakt</span></a>
+      <a href="#/om-oss" data-route-link="om-oss"><span data-i18n="navAbout">Om oss</span></a>
+      <a href="#/allergenar" data-route-link="allergenar"><span data-i18n="navAllergens">Allergenar</span></a>
+      <a href="#/arrangement" data-route-link="arrangement" id="drawerEvent" hidden><span data-i18n="eventTitle">Arrangement</span></a>
+    </nav>
+    <div class="drawer-foot">
+      <div class="drawer-lang" id="drawerLang">
+        <button type="button" data-lang="nn">NN</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="de">DE</button><button type="button" data-lang="fr">FR</button><button type="button" data-lang="it">IT</button>
+      </div>
+      <a href="tel:+4753756888">+47 537 56 888</a>
+    </div>
+  </div>
+</aside>
+
+<main id="main">
+
+<!-- ============ FRAMSIDE ============ -->
+<section class="page" data-route="">
+  <div class="home">
+    <div class="home-imgwrap"><img class="home-img" src="images/hero.jpg" alt="Krambua Bensin og Storkiosk ved sjøen i Skånevik"></div>
+    <div class="home-panel"><div class="wrap">
+      <img class="logo" src="images/logo.png" alt="Krambua Bensin og Storkiosk">
+      <p class="tag" data-i18n="heroTitle">Bensin, kiosk og varm mat ved sjøen</p>
+      <p class="small"><span data-i18n="hoursLine">Ope 10–21 alle dagar</span> · Skånevik</p>
+      <div class="hero-actions">
+        <a class="btn solid" href="#/meny"><span data-i18n="seeMenu">Sjå menyen</span> <svg class="i" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a class="btn ghost" href="#/tilbod" data-i18n="seeDeal">Vekas tilbod</a>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ MENY ============ -->
+<section class="page" data-route="meny">
+  <div class="wrap" id="menuTop">
+    <header class="page-head" style="padding:clamp(24px,4vw,44px) 0 clamp(12px,2vw,20px)">
+      <h1 data-i18n="menuTitle">Meny</h1>
+      <p class="lead" data-i18n="drinkNote">Drikke i menyen er brus, 0,5 l</p>
+    </header>
+  </div>
+  <nav class="chips" aria-label="Kategoriar"><div class="wrap"><div class="chips-in" id="chipsIn"></div></div></nav>
+  <div class="wrap">
+    <div id="catBody"></div>
+    <div class="quick" style="margin-top:clamp(36px,6vw,64px)">
+      <a class="row-link" href="#/tilbod"><span><span class="t" data-i18n="dealTitle">Vekas tilbod</span><span class="s" data-i18n="dealTeaser">Nye tilbod kvar veke</span></span><span class="ar">→</span></a>
+      <a class="row-link" href="#/arrangement" id="homeEvent" hidden><span><span class="t" data-i18n="eventTitle">Arrangement</span><span class="s" id="homeEventName"></span></span><span class="ar">→</span></a>
+      <a class="row-link" href="#/allergenar"><span><span class="t" data-i18n="navAllergens">Allergenar</span><span class="s" data-i18n="allergenLead">Oversikt over allergen i utvalet vårt.</span></span><span class="ar">→</span></a>
+    </div>
+    <p class="call-line"><span data-i18n="orderCall">Ring for å bestille</span><br><a href="tel:+4753756888">+47 537 56 888</a></p>
+    <div class="hours-strip" style="justify-content:center"><b data-i18n="hoursLine">Ope 10–21 alle dagar</b><span data-i18n="limitedFoodNote">Avgrensa matsal etter kl. 20:30</span></div>
+  </div>
+</section>
+
+<!-- ============ DEAL ============ -->
+<section class="page" data-route="tilbod">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker" id="weekNote">&nbsp;</p>
+      <h1 data-i18n="dealTitle">Vekas tilbod</h1>
+    </header>
+    <div class="deal" id="dealContainer"></div>
+    <p class="empty" id="dealEmpty" style="display:none"></p>
+    <p class="call-line"><span data-i18n="orderCall">Ring for å bestille</span><br><a href="tel:+4753756888">+47 537 56 888</a></p>
+  </div>
+</section>
+
+<!-- ============ INFO ============ -->
+<section class="page" data-route="informasjon">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker" data-i18n="infoLead">Opningstider, adresse og kart.</p>
+      <h1 data-i18n="navInfo">Informasjon</h1>
+    </header>
+    <div class="split">
+      <figure class="figure"><img class="photo tall" src="images/terrace.jpg" alt="Uteplassen ved Krambua" loading="lazy"></figure>
+      <div>
+        <div class="block" style="border-top:0;padding-top:0">
+          <h2 data-i18n="infoHoursTitle">Opningstider</h2>
+          <p class="big" data-i18n="hoursLine">Ope 10–21 alle dagar</p>
+          <p class="muted" data-i18n="limitedFoodNote">Avgrensa matsal etter kl. 20:30</p>
+        </div>
+        <div class="block">
+          <h2 data-i18n="addrLabel">Adresse</h2>
+          <p class="big">Strondavegen 2694<br>5593 Skånevik</p>
+        </div>
+        <div class="block">
+          <h2 data-i18n="contactLabel">Kontakt</h2>
+          <a class="big-link" href="tel:+4753756888">+47 537 56 888</a>
+          <p class="muted" style="margin-top:10px" data-i18n="orderCall">Ring for å bestille</p>
+        </div>
+        <div class="block">
+          <a class="btn ghost" href="#/allergenar"><span data-i18n="infoAllergensCta">Sjå allergenar</span> <svg class="i" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="map"><iframe src="https://www.google.com/maps?q=Strondavegen+2694,+5593+Sk%C3%A5nevik&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Kart – Krambua Bensin og Storkiosk"></iframe></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="page" data-route="kontakt">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker" data-i18n="contactLead">Ring oss for å bestille, eller send ei melding.</p>
+      <h1 data-i18n="contactTitle">Kontakt</h1>
+    </header>
+    <div class="split">
+      <div>
+        <div class="block" style="border-top:0;padding-top:0">
+          <h2 data-i18n="phoneLabel">Telefon</h2>
+          <a class="big-link" href="tel:+4753756888">+47 537 56 888</a>
+        </div>
+        <div class="block">
+          <h2 data-i18n="mailLabel">E-post</h2>
+          <a class="big" style="text-decoration:none;word-break:break-all" href="mailto:krambuabensin@hotmail.com">krambuabensin@hotmail.com</a>
+        </div>
+        <div class="block">
+          <h2 data-i18n="addrLabel">Adresse</h2>
+          <p class="big">Strondavegen 2694<br>5593 Skånevik</p>
+        </div>
+      </div>
+      <div class="link-list">
+        <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x463c0af2f459d41f:0xad019fd66690f3?sa=X&amp;ved=1t:8290&amp;ictx=111" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="openMap">Opne i Google Maps</span></a>
+        <a href="https://www.facebook.com/share/191dtpgJx7/?mibextid=wwXIfr" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg><span data-i18n="fbLink">Krambua på Facebook</span></a>
+        <a href="tel:+4753756888"><svg class="i" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-i18n="orderCall">Ring for å bestille</span></a>
+        <a href="mailto:krambuabensin@hotmail.com"><svg class="i" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg><span>krambuabensin@hotmail.com</span></a>
+      </div>
+    </div>
+    <div class="map"><iframe src="https://www.google.com/maps?q=Strondavegen+2694,+5593+Sk%C3%A5nevik&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Kart – Krambua Bensin og Storkiosk"></iframe></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="page" data-route="om-oss">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker" data-i18n="navAbout">Om oss</p>
+      <h1 data-i18n="aboutHeading">Velkomen til Krambua i Skånevik</h1>
+      <p class="lead" data-i18n="aboutSub">Eit naturleg stopp ved sjøen – midt i Skånevik.</p>
+    </header>
+  </div>
+  <div class="wrap">
+    <img class="photo land fullbleed" src="images/hero.jpg" alt="Krambua Bensin og Storkiosk sett frå utsida, ved sjøen i Skånevik" loading="lazy">
+  </div>
+  <div class="wrap">
+    <div class="about-text read" style="margin-top:clamp(28px,5vw,52px)">
+      <p data-i18n="aboutP1">Krambua ligg flott til ved sjøen og er ein lokal møteplass for både fastbuande, hyttefolk, båtturistar og andre som er på farten.</p>
+      <p data-i18n="aboutP2">Hos oss finn du mykje av det du treng på éin og same stad. Me har bensin og diesel, kioskvarer, varm mat og snacks, i tillegg til maling, båtutstyr, fiskeutstyr, jernvarer og propangass.</p>
+    </div>
+    <div class="about-gallery">
+      <img class="photo wide" src="images/harbour.jpg" alt="Båthamna ved Krambua i Skånevik" loading="lazy">
+      <img class="photo tall" src="images/terrace.jpg" alt="Uteplassen ved Krambua" loading="lazy">
+    </div>
+    <div class="about-text read">
+      <p data-i18n="aboutP3">Treng huset eller hytta eit nytt strøk, manglar du noko til båten, eller skal du berre fylla tanken og ha deg ein matbit? Då er Krambua ein enkel og hyggeleg stad å leggja turen innom.</p>
+      <p data-i18n="aboutP4">Med den fine plasseringa ved sjøen kan du òg slå deg ned, nyta noko godt og sjå utover fjorden og fjella rundt Skånevik.</p>
+      <p data-i18n="aboutIce">Om sommaren sel me også god is frå Hennig-Olsen – både softis, kuleis og småis.</p>
+      <p class="pull" data-i18n="aboutP5">Velkomen innom Krambua – me har litt av kvart, og hjelper deg gjerne!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ALLERGENS ============ -->
+<section class="page" data-route="allergenar">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker" data-i18n="allergenLead">Oversikt over allergen i utvalet vårt.</p>
+      <h1 data-i18n="navAllergens">Allergenar</h1>
+      <p class="lead" data-i18n="introAllergens">Tabellen viser kva allergen kvar matvare inneheld.</p>
+    </header>
+    <div class="legend">
+      <span><b class="y">✓</b><span data-i18n="legendYes">inneheld allergenet</span></span>
+      <span><b class="w">△</b><span data-i18n="legendWarn">kan innehalde spor av allergenet</span></span>
+      <span data-i18n="legendBlank">tomt felt = inneheld ikkje allergenet</span>
+    </div>
+    <p class="swipe" data-i18n="allergenSwipe">Sveip sideleis for å sjå alle kolonnane</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th class="matvare-col" data-i18n="colFood">Matvare</th>
+          <th data-i18n="colGluten">Gluten</th><th data-i18n="colShellfish">Skalldyr</th><th data-i18n="colEgg">Egg</th><th data-i18n="colFish">Fisk</th><th data-i18n="colPeanuts">Peanøtter</th><th data-i18n="colSoy">Soya</th><th data-i18n="colMilk">Melk</th><th data-i18n="colNuts">Nøtter</th><th data-i18n="colCelery">Selleri</th><th data-i18n="colMustard">Sennep</th><th data-i18n="colSesame">Sesam</th><th data-i18n="colSulphites">Sulfitt</th><th data-i18n="colLupin">Lupin</th><th data-i18n="colMolluscs">Bløtdyr</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td class="matvare" data-i18n="f_bearnaise">Bearnaise</td>
+          <td></td><td></td><td class="yes">✓</td><td></td><td></td><td></td>
+          <td class="yes">✓</td><td></td><td class="yes">✓</td><td class="yes">✓</td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_burgerbun">Hamburgerbrød</td>
+          <td class="yes">✓</td><td></td><td></td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td></td>
+          <td class="yes">✓</td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_burgerdressing">Hamburger-dressing</td>
+          <td></td><td></td><td class="yes">✓</td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td class="yes">✓</td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_burgerspice">Hamburger-krydder</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td>
+          <td></td><td></td><td class="yes">✓</td><td class="warn">△</td>
+          <td class="warn">△</td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_burgercheese">Hamburgerost</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td>
+          <td class="yes">✓</td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_garlicdressing">Hvitløksdressing</td>
+          <td></td><td></td><td class="yes">✓</td><td></td><td></td><td></td>
+          <td class="yes">✓</td><td></td><td></td><td class="yes">✓</td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_kebabchicken">Kebab kylling shawarma halal</td>
+          <td></td><td></td><td></td><td></td><td></td><td class="yes">✓</td>
+          <td></td><td></td><td class="yes">✓</td><td></td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_kebabmix">Kebab mix halal</td>
+          <td></td><td></td><td></td><td></td><td></td><td class="yes">✓</td>
+          <td></td><td></td><td class="yes">✓</td><td class="yes">✓</td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_kebabdressingmed">Kebabdressing medium</td>
+          <td></td><td></td><td class="yes">✓</td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td class="yes">✓</td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_kebabdressingmild">Kebabdressing mild</td>
+          <td></td><td></td><td class="yes">✓</td><td></td><td></td><td></td>
+          <td class="yes">✓</td><td></td><td></td><td class="yes">✓</td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_kebablefse">Kebablefse liba</td>
+          <td class="yes">✓</td><td></td><td></td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_minipizza">Minipizza</td>
+          <td class="yes">✓</td><td></td><td></td><td></td><td></td><td></td>
+          <td class="yes">✓</td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_cheesesausage">Ostepølse</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td>
+          <td class="yes">✓</td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_paninichorizo">Panini chorizo</td>
+          <td class="yes">✓</td><td></td><td class="yes">✓</td><td></td><td></td><td class="warn">△</td>
+          <td class="yes">✓</td><td class="warn">△</td><td></td><td class="yes">✓</td>
+          <td class="warn">△</td><td></td><td class="warn">△</td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_paninichicken">Panini kylling og pesto</td>
+          <td class="yes">✓</td><td></td><td class="warn">△</td><td class="warn">△</td><td></td><td class="warn">△</td>
+          <td class="yes">✓</td><td></td><td></td><td class="warn">△</td>
+          <td class="warn">△</td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_paninihamcheese">Panini ost og skinke</td>
+          <td class="yes">✓</td><td></td><td></td><td></td><td></td><td></td>
+          <td class="yes">✓</td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_friesspice">Pommes frittes krydder</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td>
+          <td></td><td></td><td class="yes">✓</td><td class="yes">✓</td>
+          <td class="warn">△</td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_hotdogbun">Pølsebrød</td>
+          <td class="yes">✓</td><td></td><td></td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td></td>
+          <td class="yes">✓</td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="matvare" data-i18n="f_toast">Toast</td>
+          <td class="yes">✓</td><td></td><td></td><td></td><td></td><td></td>
+          <td class="yes">✓</td><td></td><td></td><td></td>
+          <td></td><td></td><td></td><td></td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+    <p class="lead" style="font-size:14px" data-i18n="updatedLabel">Sist oppdatert 20.02.2026</p>
+  </div>
+</section>
+
+<!-- ============ EVENT ============ -->
+<section class="page" data-route="arrangement">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="kicker">Krambua</p>
+      <h1 data-i18n="eventTitle">Arrangement</h1>
+    </header>
+    <div id="eventContainer"></div>
+    <p class="empty" id="eventEmpty" style="display:none" data-i18n="eventNone">Ingen komande arrangement no – følg med her!</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="images/logo.png" alt="Krambua">
+        <p>Krambua Bensin &amp; Storkiosk</p>
+        <p>Strondavegen 2694, 5593 Skånevik</p>
+        <p><span data-i18n="orgLabel">Org.nr.</span> 990028206</p>
+      </div>
+      <div>
+        <h4 data-i18n="contactLabel">Kontakt</h4>
+        <a href="tel:+4753756888">+47 537 56 888</a>
+        <a href="mailto:krambuabensin@hotmail.com">krambuabensin@hotmail.com</a>
+      </div>
+      <div>
+        <h4 data-i18n="infoHoursTitle">Opningstider</h4>
+        <p data-i18n="hoursLine">Ope 10–21 alle dagar</p>
+        <p data-i18n="limitedFoodNote">Avgrensa matsal etter kl. 20:30</p>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Krambua Bensin &amp; Storkiosk. <span data-i18n="rightsReserved">Alle rettar reservert.</span></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var translations = {"nn": {"introAllergens": "Tabellen viser kva allergen kvar matvare inneheld. Er du usikker eller har du sterke allergiar, spør oss gjerne i disken – me hjelper deg å finne noko trygt.", "colFood": "Matvare", "colGluten": "Gluten", "colShellfish": "Skalldyr", "colEgg": "Egg", "colFish": "Fisk", "colPeanuts": "Peanøtter", "colSoy": "Soya", "colMilk": "Melk", "colNuts": "Nøtter", "colCelery": "Selleri", "colMustard": "Sennep", "colSesame": "Sesam", "colSulphites": "Sulfitt", "colLupin": "Lupin", "colMolluscs": "Bløtdyr", "f_bearnaise": "Bearnaise", "f_burgerbun": "Hamburgerbrød", "f_burgerdressing": "Hamburger-dressing", "f_burgerspice": "Hamburger-krydder", "f_burgercheese": "Hamburgerost", "f_garlicdressing": "Hvitløksdressing", "f_kebabchicken": "Kebab kylling shawarma halal", "f_kebabmix": "Kebab mix halal", "f_kebabdressingmed": "Kebabdressing medium", "f_kebabdressingmild": "Kebabdressing mild", "f_kebablefse": "Kebablefse liba", "f_minipizza": "Minipizza", "f_cheesesausage": "Ostepølse", "f_paninichorizo": "Panini chorizo", "f_paninichicken": "Panini kylling og pesto", "f_paninihamcheese": "Panini ost og skinke", "f_friesspice": "Pommes frittes krydder", "f_hotdogbun": "Pølsebrød", "f_toast": "Toast", "legendYes": "inneheld allergenet", "legendWarn": "kan innehalde spor av allergenet", "legendBlank": "tomt felt = inneheld ikkje allergenet", "updatedLabel": "Sist oppdatert 20.02.2026", "hoursLine": "Ope 10–21 alle dagar", "limitedFoodNote": "Avgrensa matsal etter kl. 20:30", "rightsReserved": "Alle rettar reservert.", "tagline": "Meny og prisar", "orderLine": "Bestill enkelt på telefon:", "navBurgers": "Burgerar", "navChicken": "Kylling &amp; nuggets", "navFries": "Pommes &amp; pølser", "navRolls": "Rullar &amp; tallerkenar", "navBread": "Brødmat &amp; smårettar", "navAllergens": "Allergenar", "navDeal": "Vekas tilbod", "intro": "Her finn du heile utvalet vårt med prisar. Vil du bestille, ring oss rett og slett – så gjer me resten klart til du kjem innom.", "catBurgers": "Burgerar", "catChicken": "Kylling og nuggets", "chickenNote": "All kylling er panert i mais og heilt glutenfritt", "catFries": "Pommes og pølser", "catRolls": "Rullar og tallerkenrettar", "catBread": "Brødmat og smårettar", "withDrink": "Med drikke (brus, 0,5 l)", "addCheese": "+ Ost", "addBacon": "+ Bacon", "addFries": "+ Pommes", "d_hamburger": "Hamburger 160 g", "d_doubleburger": "Dobbel burger 320 g", "d_lovstekt": "Løvstektburger", "d_chickenburger": "Heilsprø kyllingburger", "d_nuggetsfries": "Kyllingnuggets m/pommes", "d_nuggets1": "Enkel nuggets", "d_fries": "Pommes frites", "d_hotdogbread": "Grillpølse m/brød", "d_hotdogfries": "Grillpølse m/pommes", "d_cheesedogbread": "Ostepølse m/bacon, m/brød", "d_cheesedogfries": "Ostepølse m/bacon, m/pommes", "d_kebabroll": "Kebabrull", "d_biffsnadder": "Biffsnadder", "d_lovstektplate": "Løvstektallerken", "d_kebabplate": "Kebabtallerken", "kebabChoice": "Vel mellom mix kjøtt eller kylling shawarma", "d_cheeseslice": "Ost, pr. skive", "d_baconslice": "Bacon, pr. skive", "d_glutenfreebread": "Glutenfritt brød", "d_panini": "Panini", "d_toast": "Toast", "d_toastgf": "Toast, glutenfri", "d_minipizza": "Minipizza", "addonTitle": "Tillegg til hamburgerar", "addonHint": "Kan leggjast til på burgerane over.", "addCheeseWord": "Ost", "addBaconWord": "Bacon", "addFriesWord": "Pommes", "addDrinkWord": "Drikke (brus, 0,5 l)", "footerCta": "Vil du bestille?", "footerFine": "Denne sida syner berre utvalet vårt og prisane – bestilling skjer på telefon, eller ved å stikke innom disken.", "fbLink": "Krambua på Facebook", "drinkNote": "Drikke i menyen er brus, 0,5 l", "navMenu": "Meny", "navInfo": "Informasjon", "navAbout": "Om oss", "navEvent": "Arrangement", "infoHoursTitle": "Opningstider", "infoContactTitle": "Kontakt", "infoAllergensCta": "Sjå allergenar", "infoEventCta": "Kommande arrangement", "aboutHeading": "Velkomen til Krambua i Skånevik", "aboutSub": "Eit naturleg stopp ved sjøen – midt i Skånevik.", "aboutP1": "Krambua ligg flott til ved sjøen og er ein lokal møteplass for både fastbuande, hyttefolk, båtturistar og andre som er på farten.", "aboutP2": "Hos oss finn du mykje av det du treng på éin og same stad. Me har bensin og diesel, kioskvarer, varm mat og snacks, i tillegg til maling, båtutstyr, fiskeutstyr, jernvarer og propangass.", "aboutP3": "Treng huset eller hytta eit nytt strøk, manglar du noko til båten, eller skal du berre fylla tanken og ha deg ein matbit? Då er Krambua ein enkel og hyggeleg stad å leggja turen innom.", "aboutP4": "Med den fine plasseringa ved sjøen kan du òg slå deg ned, nyta noko godt og sjå utover fjorden og fjella rundt Skånevik.", "aboutIce": "Om sommaren sel me også god is frå Hennig-Olsen – både softis, kuleis og småis.", "aboutP5": "Velkomen innom Krambua – me har litt av kvart, og hjelper deg gjerne!", "orderNote": "Vil du bestille? Ring oss på", "stickyCall": "Ring oss", "stickyMail": "Send e-post", "navHome": "Framside", "heroKicker": "Skånevik · ved sjøen", "heroTitle": "Bensin, kiosk og varm mat ved sjøen", "heroLead": "Heile utvalet vårt med prisar. Bestill på telefon, eller stikk innom.", "seeMenu": "Sjå menyen", "seeDeal": "Vekas tilbod", "dealTeaser": "Nye tilbod kvar veke", "menuTitle": "Meny", "menuLead": "Vel ein kategori", "back": "Tilbake", "backToMenu": "Tilbake til meny", "prevLbl": "Førre", "nextLbl": "Neste", "dealTitle": "Vekas tilbod", "dealWeek": "Gjeld veke", "dealNone": "Ingen tilbod akkurat no – sjekk innom igjen litt seinare!", "dealEnded": "Denne vekas tilbod er avslutta – nye tilbod kjem måndag!", "dealBadge": "Tilbod", "contactTitle": "Kontakt", "contactLead": "Ring oss for å bestille, eller send ei melding.", "addrLabel": "Adresse", "phoneLabel": "Telefon", "mailLabel": "E-post", "eventTitle": "Arrangement", "eventNone": "Ingen komande arrangement no – følg med her!", "orderCall": "Ring for å bestille", "openMap": "Opne i Google Maps", "menuWord": "Meny", "langWord": "Språk", "infoLead": "Opningstider, adresse og kart.", "allergenLead": "Oversikt over allergen i utvalet vårt.", "allergenSwipe": "Sveip sideleis for å sjå alle kolonnane", "contactLabel": "Kontakt", "orgLabel": "Org.nr."}, "en": {"introAllergens": "The table shows which allergens each item contains. If you're unsure or have a severe allergy, just ask us at the counter – we'll help you find something safe.", "colFood": "Food item", "colGluten": "Gluten", "colShellfish": "Crustaceans", "colEgg": "Egg", "colFish": "Fish", "colPeanuts": "Peanuts", "colSoy": "Soy", "colMilk": "Milk", "colNuts": "Nuts", "colCelery": "Celery", "colMustard": "Mustard", "colSesame": "Sesame", "colSulphites": "Sulphites", "colLupin": "Lupin", "colMolluscs": "Molluscs", "f_bearnaise": "Béarnaise sauce", "f_burgerbun": "Burger bun", "f_burgerdressing": "Burger dressing", "f_burgerspice": "Burger seasoning", "f_burgercheese": "Burger cheese", "f_garlicdressing": "Garlic dressing", "f_kebabchicken": "Kebab, chicken shawarma (halal)", "f_kebabmix": "Kebab, mixed meat (halal)", "f_kebabdressingmed": "Kebab sauce, medium", "f_kebabdressingmild": "Kebab sauce, mild", "f_kebablefse": "Kebab flatbread (Liba)", "f_minipizza": "Mini pizza", "f_cheesesausage": "Cheese sausage", "f_paninichorizo": "Panini, chorizo", "f_paninichicken": "Panini, chicken and pesto", "f_paninihamcheese": "Panini, cheese and ham", "f_friesspice": "Fries seasoning", "f_hotdogbun": "Hot dog bun", "f_toast": "Toasted sandwich", "legendYes": "contains the allergen", "legendWarn": "may contain traces of the allergen", "legendBlank": "blank = does not contain the allergen", "updatedLabel": "Last updated 20.02.2026", "hoursLine": "Open 10am–9pm every day", "limitedFoodNote": "Limited food menu after 8:30pm", "rightsReserved": "All rights reserved.", "tagline": "Menu &amp; prices", "orderLine": "Order easily by phone:", "navBurgers": "Burgers", "navChicken": "Chicken &amp; nuggets", "navFries": "Fries &amp; hot dogs", "navRolls": "Wraps &amp; plates", "navBread": "Sandwiches &amp; snacks", "navAllergens": "Allergens", "navDeal": "Weekly deal", "intro": "Here's our full menu with prices. To order, just give us a call – we'll have it ready when you arrive.", "catBurgers": "Burgers", "catChicken": "Chicken and nuggets", "chickenNote": "All our chicken is corn-breaded and completely gluten-free", "catFries": "Fries and hot dogs", "catRolls": "Wraps and plates", "catBread": "Sandwiches and snacks", "withDrink": "With a drink (soda, 0.5 l)", "addCheese": "+ Cheese", "addBacon": "+ Bacon", "addFries": "+ Fries", "d_hamburger": "Hamburger 160 g", "d_doubleburger": "Double burger 320 g", "d_lovstekt": "Pan-fried steak burger", "d_chickenburger": "Crispy chicken burger", "d_nuggetsfries": "Chicken nuggets with fries", "d_nuggets1": "Single nugget", "d_fries": "French fries", "d_hotdogbread": "Grilled hot dog with bun", "d_hotdogfries": "Grilled hot dog with fries", "d_cheesedogbread": "Cheese &amp; bacon dog with bun", "d_cheesedogfries": "Cheese &amp; bacon dog with fries", "d_kebabroll": "Kebab wrap", "d_biffsnadder": "Sliced beef stir-fry", "d_lovstektplate": "Pan-fried steak plate", "d_kebabplate": "Kebab plate", "kebabChoice": "Choose between mixed meat or chicken shawarma", "d_cheeseslice": "Cheese, per slice", "d_baconslice": "Bacon, per slice", "d_glutenfreebread": "Gluten-free bread", "d_panini": "Panini", "d_toast": "Toasted sandwich", "d_toastgf": "Toasted sandwich, gluten-free", "d_minipizza": "Mini pizza", "addonTitle": "Burger add-ons", "addonHint": "Can be added to any burger above.", "addCheeseWord": "Cheese", "addBaconWord": "Bacon", "addFriesWord": "Fries", "addDrinkWord": "Drink (soda, 0.5 l)", "footerCta": "Want to order?", "footerFine": "This page only shows our menu and prices – orders are placed by phone or in person at the counter.", "fbLink": "Krambua on Facebook", "drinkNote": "\"Drink\" on the menu means a 0.5 l soda", "navMenu": "Menu", "navInfo": "Information", "navAbout": "About us", "navEvent": "Event", "infoHoursTitle": "Opening hours", "infoContactTitle": "Contact", "infoAllergensCta": "View allergens", "infoEventCta": "Upcoming event", "aboutHeading": "Welcome to Krambua in Skånevik", "aboutSub": "A natural stop by the sea – right in the middle of Skånevik.", "aboutP1": "Krambua sits right by the water and is a local gathering place for residents, cabin owners, boaters, and anyone passing through.", "aboutP2": "Here you'll find much of what you need in one place. We carry petrol and diesel, kiosk goods, hot food and snacks, as well as paint, boating supplies, fishing gear, hardware, and propane gas.", "aboutP3": "Does your house or cabin need a fresh coat of paint, are you missing something for the boat, or do you just need to fill up and grab a bite? Krambua is an easy, friendly place to stop by.", "aboutP4": "With our lovely spot by the sea, you can also settle in, enjoy something good, and take in the view over the fjord and the mountains around Skånevik.", "aboutIce": "In summer we also sell great ice cream from Hennig-Olsen – soft-serve, scoop, and ice lollies.", "aboutP5": "Welcome to Krambua – we carry a bit of everything, and we're always happy to help!", "orderNote": "Want to order? Give us a call on", "stickyCall": "Call us", "stickyMail": "Send email", "navHome": "Home", "heroKicker": "Skånevik · by the sea", "heroTitle": "Fuel, kiosk and hot food by the sea", "heroLead": "Our full selection with prices. Order by phone, or just drop by.", "seeMenu": "See the menu", "seeDeal": "Deal of the week", "dealTeaser": "New offers every week", "menuTitle": "Menu", "menuLead": "Choose a category", "back": "Back", "backToMenu": "Back to menu", "prevLbl": "Previous", "nextLbl": "Next", "dealTitle": "Deal of the week", "dealWeek": "Valid week", "dealNone": "No offers right now – check back a little later!", "dealEnded": "This week's offers have ended – new offers arrive on Monday!", "dealBadge": "Offer", "contactTitle": "Contact", "contactLead": "Call us to order, or send a message.", "addrLabel": "Address", "phoneLabel": "Phone", "mailLabel": "Email", "eventTitle": "Events", "eventNone": "No upcoming events right now – stay tuned!", "orderCall": "Call to order", "openMap": "Open in Google Maps", "menuWord": "Menu", "langWord": "Language", "infoLead": "Opening hours, address and map.", "allergenLead": "Overview of allergens in our selection.", "allergenSwipe": "Swipe sideways to see all columns", "contactLabel": "Contact", "orgLabel": "Org. no."}, "de": {"introAllergens": "Die Tabelle zeigt, welche Allergene in jedem Gericht enthalten sind. Bist du unsicher oder hast eine starke Allergie, frag uns einfach an der Theke – wir helfen dir, etwas Sicheres zu finden.", "colFood": "Gericht", "colGluten": "Gluten", "colShellfish": "Krebstiere", "colEgg": "Ei", "colFish": "Fisch", "colPeanuts": "Erdnüsse", "colSoy": "Soja", "colMilk": "Milch", "colNuts": "Nüsse", "colCelery": "Sellerie", "colMustard": "Senf", "colSesame": "Sesam", "colSulphites": "Sulfite", "colLupin": "Lupinen", "colMolluscs": "Weichtiere", "f_bearnaise": "Sauce Béarnaise", "f_burgerbun": "Hamburgerbrötchen", "f_burgerdressing": "Burger-Dressing", "f_burgerspice": "Burger-Gewürz", "f_burgercheese": "Burger-Käse", "f_garlicdressing": "Knoblauch-Dressing", "f_kebabchicken": "Kebab, Hähnchen-Shawarma (halal)", "f_kebabmix": "Kebab, Mix (halal)", "f_kebabdressingmed": "Kebabsoße, mittel", "f_kebabdressingmild": "Kebabsoße, mild", "f_kebablefse": "Kebab-Fladenbrot (Liba)", "f_minipizza": "Minipizza", "f_cheesesausage": "Käsewurst", "f_paninichorizo": "Panini Chorizo", "f_paninichicken": "Panini Hähnchen und Pesto", "f_paninihamcheese": "Panini Käse und Schinken", "f_friesspice": "Pommes-Gewürz", "f_hotdogbun": "Würstchenbrötchen", "f_toast": "Toast", "legendYes": "enthält das Allergen", "legendWarn": "kann Spuren des Allergens enthalten", "legendBlank": "leer = enthält das Allergen nicht", "updatedLabel": "Zuletzt aktualisiert am 20.02.2026", "hoursLine": "Geöffnet 10–21 Uhr, jeden Tag", "limitedFoodNote": "Eingeschränktes Speisenangebot nach 20:30 Uhr", "rightsReserved": "Alle Rechte vorbehalten.", "tagline": "Speisekarte &amp; Preise", "orderLine": "Ganz einfach telefonisch bestellen:", "navBurgers": "Burger", "navChicken": "Hähnchen &amp; Nuggets", "navFries": "Pommes &amp; Würstchen", "navRolls": "Wraps &amp; Teller", "navBread": "Brote &amp; Kleinigkeiten", "navAllergens": "Allergene", "navDeal": "Angebot der Woche", "intro": "Hier findest du unser gesamtes Angebot mit Preisen. Zum Bestellen einfach anrufen – wir machen alles fertig, bis du kommst.", "catBurgers": "Burger", "catChicken": "Hähnchen und Nuggets", "chickenNote": "Unser gesamtes Hähnchen ist mit Maispanade paniert und komplett glutenfrei", "catFries": "Pommes und Würstchen", "catRolls": "Wraps und Teller", "catBread": "Brote und Kleinigkeiten", "withDrink": "Mit Getränk (Soda, 0,5 l)", "addCheese": "+ Käse", "addBacon": "+ Speck", "addFries": "+ Pommes", "d_hamburger": "Hamburger 160 g", "d_doubleburger": "Doppelburger 320 g", "d_lovstekt": "Gebratener Steakburger", "d_chickenburger": "Knuspriger Hähnchenburger", "d_nuggetsfries": "Chicken Nuggets mit Pommes", "d_nuggets1": "Einzelnes Nugget", "d_fries": "Pommes frites", "d_hotdogbread": "Grillwürstchen im Brötchen", "d_hotdogfries": "Grillwürstchen mit Pommes", "d_cheesedogbread": "Käse-Speck-Würstchen im Brötchen", "d_cheesedogfries": "Käse-Speck-Würstchen mit Pommes", "d_kebabroll": "Kebab-Wrap", "d_biffsnadder": "Gebratene Rindfleischstreifen", "d_lovstektplate": "Steakteller", "d_kebabplate": "Kebabteller", "kebabChoice": "Wähl zwischen gemischtem Fleisch oder Hähnchen-Shawarma", "d_cheeseslice": "Käse, pro Scheibe", "d_baconslice": "Speck, pro Scheibe", "d_glutenfreebread": "Glutenfreies Brot", "d_panini": "Panini", "d_toast": "Toast", "d_toastgf": "Toast, glutenfrei", "d_minipizza": "Minipizza", "addonTitle": "Extras für Burger", "addonHint": "Kann zu jedem Burger oben hinzugefügt werden.", "addCheeseWord": "Käse", "addBaconWord": "Speck", "addFriesWord": "Pommes", "addDrinkWord": "Getränk (Soda, 0,5 l)", "footerCta": "Möchtest du bestellen?", "footerFine": "Diese Seite zeigt nur unser Angebot und die Preise – bestellt wird telefonisch oder direkt an der Theke.", "fbLink": "Krambua auf Facebook", "drinkNote": "„Getränk“ bedeutet ein Soda, 0,5 l", "navMenu": "Menü", "navInfo": "Information", "navAbout": "Über uns", "navEvent": "Veranstaltung", "infoHoursTitle": "Öffnungszeiten", "infoContactTitle": "Kontakt", "infoAllergensCta": "Allergene ansehen", "infoEventCta": "Kommende Veranstaltung", "aboutHeading": "Willkommen bei Krambua in Skånevik", "aboutSub": "Ein natürlicher Halt am Meer – mitten in Skånevik.", "aboutP1": "Krambua liegt wunderschön am Wasser und ist ein beliebter Treffpunkt für Einheimische, Hüttenbesitzer, Bootstouristen und alle, die unterwegs sind.", "aboutP2": "Bei uns findest du vieles an einem Ort. Wir führen Benzin und Diesel, Kioskwaren, warme Speisen und Snacks sowie Farbe, Bootszubehör, Angelausrüstung, Eisenwaren und Propangas.", "aboutP3": "Braucht dein Haus oder deine Hütte einen neuen Anstrich, fehlt dir etwas fürs Boot, oder möchtest du einfach nur tanken und eine Kleinigkeit essen? Dann ist Krambua ein unkomplizierter, freundlicher Ort für einen Zwischenstopp.", "aboutP4": "Dank der schönen Lage am Meer kannst du dich auch einfach hinsetzen, etwas Gutes genießen und den Blick über den Fjord und die Berge rund um Skånevik schweifen lassen.", "aboutIce": "Im Sommer verkaufen wir außerdem leckeres Eis von Hennig-Olsen – Softeis, Kugeleis und Eis am Stiel.", "aboutP5": "Willkommen bei Krambua – wir haben von allem etwas und helfen dir gerne weiter!", "orderNote": "Möchtest du bestellen? Ruf uns an unter", "stickyCall": "Anrufen", "stickyMail": "E-Mail senden", "navHome": "Startseite", "heroKicker": "Skånevik · am Meer", "heroTitle": "Tankstelle, Kiosk und warmes Essen am Meer", "heroLead": "Unser gesamtes Angebot mit Preisen. Bestellen Sie telefonisch oder kommen Sie vorbei.", "seeMenu": "Zur Speisekarte", "seeDeal": "Angebot der Woche", "dealTeaser": "Jede Woche neue Angebote", "menuTitle": "Speisekarte", "menuLead": "Kategorie wählen", "back": "Zurück", "backToMenu": "Zurück zur Speisekarte", "prevLbl": "Zurück", "nextLbl": "Weiter", "dealTitle": "Angebot der Woche", "dealWeek": "Gültig in Woche", "dealNone": "Zurzeit keine Angebote – schauen Sie später wieder vorbei!", "dealEnded": "Die Angebote dieser Woche sind beendet – neue Angebote gibt es am Montag!", "dealBadge": "Angebot", "contactTitle": "Kontakt", "contactLead": "Rufen Sie uns zum Bestellen an oder schreiben Sie uns.", "addrLabel": "Adresse", "phoneLabel": "Telefon", "mailLabel": "E-Mail", "eventTitle": "Veranstaltungen", "eventNone": "Zurzeit keine Veranstaltungen – schauen Sie bald wieder vorbei!", "orderCall": "Zum Bestellen anrufen", "openMap": "In Google Maps öffnen", "menuWord": "Menü", "langWord": "Sprache", "infoLead": "Öffnungszeiten, Adresse und Karte.", "allergenLead": "Übersicht der Allergene in unserem Angebot.", "allergenSwipe": "Seitlich wischen, um alle Spalten zu sehen", "contactLabel": "Kontakt", "orgLabel": "Org.-Nr."}, "fr": {"introAllergens": "Le tableau indique les allergènes contenus dans chaque plat. En cas de doute ou d'allergie sévère, demandez-nous simplement au comptoir – nous vous aiderons à trouver une option sûre.", "colFood": "Plat", "colGluten": "Gluten", "colShellfish": "Crustacés", "colEgg": "Œuf", "colFish": "Poisson", "colPeanuts": "Arachides", "colSoy": "Soja", "colMilk": "Lait", "colNuts": "Fruits à coque", "colCelery": "Céleri", "colMustard": "Moutarde", "colSesame": "Sésame", "colSulphites": "Sulfites", "colLupin": "Lupin", "colMolluscs": "Mollusques", "f_bearnaise": "Sauce béarnaise", "f_burgerbun": "Pain à burger", "f_burgerdressing": "Sauce burger", "f_burgerspice": "Épices burger", "f_burgercheese": "Fromage burger", "f_garlicdressing": "Sauce à l'ail", "f_kebabchicken": "Kebab, poulet shawarma (halal)", "f_kebabmix": "Kebab, viande mixte (halal)", "f_kebabdressingmed": "Sauce kebab, moyenne", "f_kebabdressingmild": "Sauce kebab, douce", "f_kebablefse": "Galette kebab (Liba)", "f_minipizza": "Mini-pizza", "f_cheesesausage": "Saucisse au fromage", "f_paninichorizo": "Panini chorizo", "f_paninichicken": "Panini poulet et pesto", "f_paninihamcheese": "Panini jambon-fromage", "f_friesspice": "Épices frites", "f_hotdogbun": "Pain à hot-dog", "f_toast": "Croque-monsieur", "legendYes": "contient l'allergène", "legendWarn": "peut contenir des traces de l'allergène", "legendBlank": "case vide = ne contient pas l'allergène", "updatedLabel": "Dernière mise à jour le 20.02.2026", "hoursLine": "Ouvert de 10h à 21h tous les jours", "limitedFoodNote": "Offre de repas limitée après 20h30", "rightsReserved": "Tous droits réservés.", "tagline": "Menu &amp; prix", "orderLine": "Commandez facilement par téléphone :", "navBurgers": "Burgers", "navChicken": "Poulet &amp; nuggets", "navFries": "Frites &amp; hot-dogs", "navRolls": "Wraps &amp; assiettes", "navBread": "Sandwichs &amp; en-cas", "navAllergens": "Allergènes", "navDeal": "Offre de la semaine", "intro": "Voici l'ensemble de notre offre avec les prix. Pour commander, appelez-nous simplement – tout sera prêt à votre arrivée.", "catBurgers": "Burgers", "catChicken": "Poulet et nuggets", "chickenNote": "Tout notre poulet est pané au maïs et entièrement sans gluten", "catFries": "Frites et hot-dogs", "catRolls": "Wraps et assiettes", "catBread": "Sandwichs et en-cas", "withDrink": "Avec une boisson (soda, 0,5 l)", "addCheese": "+ Fromage", "addBacon": "+ Bacon", "addFries": "+ Frites", "d_hamburger": "Hamburger 160 g", "d_doubleburger": "Double burger 320 g", "d_lovstekt": "Burger au bœuf poêlé", "d_chickenburger": "Burger de poulet croustillant", "d_nuggetsfries": "Nuggets de poulet avec frites", "d_nuggets1": "Nugget à l'unité", "d_fries": "Frites", "d_hotdogbread": "Hot-dog grillé, avec pain", "d_hotdogfries": "Hot-dog grillé, avec frites", "d_cheesedogbread": "Hot-dog fromage et bacon, avec pain", "d_cheesedogfries": "Hot-dog fromage et bacon, avec frites", "d_kebabroll": "Wrap kebab", "d_biffsnadder": "Émincé de bœuf sauté", "d_lovstektplate": "Assiette de bœuf poêlé", "d_kebabplate": "Assiette kebab", "kebabChoice": "Choisissez entre viande mixte ou poulet shawarma", "d_cheeseslice": "Fromage, la tranche", "d_baconslice": "Bacon, la tranche", "d_glutenfreebread": "Pain sans gluten", "d_panini": "Panini", "d_toast": "Croque-monsieur", "d_toastgf": "Croque-monsieur sans gluten", "d_minipizza": "Mini-pizza", "addonTitle": "Suppléments pour burgers", "addonHint": "Peuvent être ajoutés à n'importe quel burger ci-dessus.", "addCheeseWord": "Fromage", "addBaconWord": "Bacon", "addFriesWord": "Frites", "addDrinkWord": "Boisson (soda, 0,5 l)", "footerCta": "Envie de commander ?", "footerFine": "Cette page présente uniquement notre offre et nos prix – les commandes se font par téléphone ou directement au comptoir.", "fbLink": "Krambua sur Facebook", "drinkNote": "« Boisson » signifie un soda de 0,5 l", "navMenu": "Menu", "navInfo": "Informations", "navAbout": "À propos", "navEvent": "Événement", "infoHoursTitle": "Horaires d'ouverture", "infoContactTitle": "Contact", "infoAllergensCta": "Voir les allergènes", "infoEventCta": "Événement à venir", "aboutHeading": "Bienvenue chez Krambua à Skånevik", "aboutSub": "Une halte naturelle au bord de la mer – en plein cœur de Skånevik.", "aboutP1": "Krambua est magnifiquement situé au bord de l'eau et constitue un lieu de rencontre local pour les habitants, les propriétaires de chalets, les plaisanciers et tous ceux de passage.", "aboutP2": "Chez nous, vous trouverez beaucoup de choses au même endroit. Nous proposons essence et diesel, produits de kiosque, plats chauds et en-cas, ainsi que peinture, équipement nautique, matériel de pêche, quincaillerie et gaz propane.", "aboutP3": "Votre maison ou votre chalet a besoin d'un coup de peinture, il vous manque quelque chose pour le bateau, ou vous voulez simplement faire le plein et manger un morceau ? Krambua est un endroit simple et sympathique où faire une halte.", "aboutP4": "Grâce à notre belle situation au bord de la mer, vous pouvez aussi vous installer, savourer quelque chose de bon et profiter de la vue sur le fjord et les montagnes autour de Skånevik.", "aboutIce": "En été, nous vendons aussi de bonnes glaces Hennig-Olsen – glace à l'italienne, boules et glaces à l'eau.", "aboutP5": "Bienvenue chez Krambua – nous avons un peu de tout, et nous sommes toujours ravis de vous aider !", "orderNote": "Envie de commander ? Appelez-nous au", "stickyCall": "Appelez-nous", "stickyMail": "Envoyer un e-mail", "navHome": "Accueil", "heroKicker": "Skånevik · au bord de la mer", "heroTitle": "Carburant, kiosque et plats chauds au bord de la mer", "heroLead": "Toute notre sélection avec les prix. Commandez par téléphone ou passez nous voir.", "seeMenu": "Voir le menu", "seeDeal": "Offre de la semaine", "dealTeaser": "De nouvelles offres chaque semaine", "menuTitle": "Menu", "menuLead": "Choisissez une catégorie", "back": "Retour", "backToMenu": "Retour au menu", "prevLbl": "Précédent", "nextLbl": "Suivant", "dealTitle": "Offre de la semaine", "dealWeek": "Valable semaine", "dealNone": "Aucune offre pour le moment – repassez un peu plus tard !", "dealEnded": "Les offres de cette semaine sont terminées – de nouvelles offres arrivent lundi !", "dealBadge": "Offre", "contactTitle": "Contact", "contactLead": "Appelez-nous pour commander, ou envoyez un message.", "addrLabel": "Adresse", "phoneLabel": "Téléphone", "mailLabel": "E-mail", "eventTitle": "Événements", "eventNone": "Aucun événement à venir – restez à l'écoute !", "orderCall": "Appelez pour commander", "openMap": "Ouvrir dans Google Maps", "menuWord": "Menu", "langWord": "Langue", "infoLead": "Horaires, adresse et carte.", "allergenLead": "Aperçu des allergènes de notre sélection.", "allergenSwipe": "Faites défiler latéralement pour voir toutes les colonnes", "contactLabel": "Contact", "orgLabel": "N° d'org."}, "it": {"introAllergens": "La tabella mostra quali allergeni contiene ogni piatto. Se non sei sicuro o hai un'allergia grave, chiedi pure al bancone – ti aiuteremo a trovare qualcosa di sicuro.", "colFood": "Piatto", "colGluten": "Glutine", "colShellfish": "Crostacei", "colEgg": "Uovo", "colFish": "Pesce", "colPeanuts": "Arachidi", "colSoy": "Soia", "colMilk": "Latte", "colNuts": "Frutta a guscio", "colCelery": "Sedano", "colMustard": "Senape", "colSesame": "Sesamo", "colSulphites": "Solfiti", "colLupin": "Lupini", "colMolluscs": "Molluschi", "f_bearnaise": "Salsa bernese", "f_burgerbun": "Panino per hamburger", "f_burgerdressing": "Salsa per hamburger", "f_burgerspice": "Spezie per hamburger", "f_burgercheese": "Formaggio per hamburger", "f_garlicdressing": "Salsa all'aglio", "f_kebabchicken": "Kebab, pollo shawarma (halal)", "f_kebabmix": "Kebab, misto (halal)", "f_kebabdressingmed": "Salsa kebab, media", "f_kebabdressingmild": "Salsa kebab, delicata", "f_kebablefse": "Piadina kebab (Liba)", "f_minipizza": "Mini pizza", "f_cheesesausage": "Salsiccia al formaggio", "f_paninichorizo": "Panino chorizo", "f_paninichicken": "Panino pollo e pesto", "f_paninihamcheese": "Panino prosciutto e formaggio", "f_friesspice": "Spezie per patatine", "f_hotdogbun": "Panino per hot dog", "f_toast": "Toast", "legendYes": "contiene l'allergene", "legendWarn": "può contenere tracce dell'allergene", "legendBlank": "vuoto = non contiene l'allergene", "updatedLabel": "Ultimo aggiornamento 20.02.2026", "hoursLine": "Aperto 10–21 tutti i giorni", "limitedFoodNote": "Offerta di cibo limitata dopo le 20:30", "rightsReserved": "Tutti i diritti riservati.", "tagline": "Menu e prezzi", "orderLine": "Ordina facilmente per telefono:", "navBurgers": "Burger", "navChicken": "Pollo e nuggets", "navFries": "Patatine e hot dog", "navRolls": "Piadine e piatti", "navBread": "Panini e snack", "navAllergens": "Allergeni", "navDeal": "Offerta della settimana", "intro": "Qui trovi tutta la nostra offerta con i prezzi. Per ordinare, chiamaci semplicemente – prepareremo tutto per il tuo arrivo.", "catBurgers": "Burger", "catChicken": "Pollo e nuggets", "chickenNote": "Tutto il nostro pollo è impanato nel mais ed è completamente senza glutine", "catFries": "Patatine e hot dog", "catRolls": "Piadine e piatti", "catBread": "Panini e snack", "withDrink": "Con bibita (bibita gassata, 0,5 l)", "addCheese": "+ Formaggio", "addBacon": "+ Bacon", "addFries": "+ Patatine", "d_hamburger": "Hamburger 160 g", "d_doubleburger": "Doppio burger 320 g", "d_lovstekt": "Burger di manzo in padella", "d_chickenburger": "Burger di pollo croccante", "d_nuggetsfries": "Nuggets di pollo con patatine", "d_nuggets1": "Nugget singolo", "d_fries": "Patatine fritte", "d_hotdogbread": "Hot dog alla griglia con pane", "d_hotdogfries": "Hot dog alla griglia con patatine", "d_cheesedogbread": "Hot dog formaggio e bacon, con pane", "d_cheesedogfries": "Hot dog formaggio e bacon, con patatine", "d_kebabroll": "Piadina kebab", "d_biffsnadder": "Straccetti di manzo saltati", "d_lovstektplate": "Piatto di manzo in padella", "d_kebabplate": "Piatto kebab", "kebabChoice": "Scegli tra carne mista o pollo shawarma", "d_cheeseslice": "Formaggio, a fetta", "d_baconslice": "Bacon, a fetta", "d_glutenfreebread": "Pane senza glutine", "d_panini": "Panino toast", "d_toast": "Toast", "d_toastgf": "Toast senza glutine", "d_minipizza": "Mini pizza", "addonTitle": "Extra per i burger", "addonHint": "Possono essere aggiunti a qualsiasi burger sopra.", "addCheeseWord": "Formaggio", "addBaconWord": "Bacon", "addFriesWord": "Patatine", "addDrinkWord": "Bibita (bibita gassata, 0,5 l)", "footerCta": "Vuoi ordinare?", "footerFine": "Questa pagina mostra solo la nostra offerta e i prezzi – gli ordini si fanno per telefono o direttamente al bancone.", "fbLink": "Krambua su Facebook", "drinkNote": "\"Bibita\" nel menu significa una bibita gassata da 0,5 l", "navMenu": "Menu", "navInfo": "Informazioni", "navAbout": "Chi siamo", "navEvent": "Evento", "infoHoursTitle": "Orari di apertura", "infoContactTitle": "Contatti", "infoAllergensCta": "Vedi allergeni", "infoEventCta": "Prossimo evento", "aboutHeading": "Benvenuti da Krambua a Skånevik", "aboutSub": "Una sosta naturale sul mare – nel cuore di Skånevik.", "aboutP1": "Krambua si trova in una splendida posizione sul mare ed è un punto d'incontro locale per residenti, proprietari di baite, diportisti e chiunque sia di passaggio.", "aboutP2": "Da noi trovi molto di ciò di cui hai bisogno in un unico posto. Abbiamo benzina e diesel, articoli da chiosco, cibo caldo e snack, oltre a vernici, attrezzatura nautica, articoli da pesca, ferramenta e gas propano.", "aboutP3": "La tua casa o baita ha bisogno di una mano di vernice, ti manca qualcosa per la barca, o vuoi semplicemente fare rifornimento e mangiare un boccone? Krambua è un posto semplice e accogliente dove fermarsi.", "aboutP4": "Grazie alla splendida posizione sul mare, puoi anche fermarti, goderti qualcosa di buono e ammirare il fiordo e le montagne intorno a Skånevik.", "aboutIce": "D'estate vendiamo anche un ottimo gelato Hennig-Olsen – soft, gelato in coppetta e ghiaccioli.", "aboutP5": "Benvenuti da Krambua – abbiamo un po' di tutto, e siamo sempre felici di aiutarti!", "orderNote": "Vuoi ordinare? Chiamaci al", "stickyCall": "Chiamaci", "stickyMail": "Invia un'email", "navHome": "Home", "heroKicker": "Skånevik · sul mare", "heroTitle": "Carburante, chiosco e cibo caldo sul mare", "heroLead": "Tutta la nostra selezione con i prezzi. Ordina per telefono o passa a trovarci.", "seeMenu": "Vedi il menu", "seeDeal": "Offerta della settimana", "dealTeaser": "Nuove offerte ogni settimana", "menuTitle": "Menu", "menuLead": "Scegli una categoria", "back": "Indietro", "backToMenu": "Torna al menu", "prevLbl": "Precedente", "nextLbl": "Successivo", "dealTitle": "Offerta della settimana", "dealWeek": "Valida settimana", "dealNone": "Nessuna offerta al momento – ripassa più tardi!", "dealEnded": "Le offerte di questa settimana sono terminate – nuove offerte lunedì!", "dealBadge": "Offerta", "contactTitle": "Contatti", "contactLead": "Chiamaci per ordinare, o invia un messaggio.", "addrLabel": "Indirizzo", "phoneLabel": "Telefono", "mailLabel": "E-mail", "eventTitle": "Eventi", "eventNone": "Nessun evento in programma – resta aggiornato!", "orderCall": "Chiama per ordinare", "openMap": "Apri in Google Maps", "menuWord": "Menu", "langWord": "Lingua", "infoLead": "Orari, indirizzo e mappa.", "allergenLead": "Panoramica degli allergeni nella nostra selezione.", "allergenSwipe": "Scorri di lato per vedere tutte le colonne", "contactLabel": "Contatti", "orgLabel": "N. org."}};
+  var DEFAULT_DATA = {"hours": {"open": "10:00", "close": "21:00", "foodUntil": "20:30"}, "addons": {"cheese": 10, "bacon": 15, "fries": 45, "drink": 40}, "categories": [{"id": "burgerar", "name": {"nn": "Burgerar", "en": "Burgers", "de": "Burger", "fr": "Burgers", "it": "Burger"}, "addons": true, "items": [{"name": {"nn": "Hamburger 160 g", "en": "Hamburger 160 g", "de": "Hamburger 160 g", "fr": "Hamburger 160 g", "it": "Hamburger 160 g"}, "price": 145, "withDrink": 185}, {"name": {"nn": "Dobbel burger 320 g", "en": "Double burger 320 g", "de": "Doppelburger 320 g", "fr": "Double burger 320 g", "it": "Doppio burger 320 g"}, "price": 200, "withDrink": 240}, {"name": {"nn": "Løvstektburger", "en": "Pan-fried steak burger", "de": "Gebratener Steakburger", "fr": "Burger au bœuf poêlé", "it": "Burger di manzo in padella"}, "price": 145, "withDrink": 185}]}, {"id": "kylling", "name": {"nn": "Kylling og nuggets", "en": "Chicken and nuggets", "de": "Hähnchen und Nuggets", "fr": "Poulet et nuggets", "it": "Pollo e nuggets"}, "note": {"nn": "All kylling er panert i mais og heilt glutenfritt", "en": "All our chicken is corn-breaded and completely gluten-free", "de": "Unser gesamtes Hähnchen ist mit Maispanade paniert und komplett glutenfrei", "fr": "Tout notre poulet est pané au maïs et entièrement sans gluten", "it": "Tutto il nostro pollo è impanato nel mais ed è completamente senza glutine"}, "items": [{"name": {"nn": "Heilsprø kyllingburger", "en": "Crispy chicken burger", "de": "Knuspriger Hähnchenburger", "fr": "Burger de poulet croustillant", "it": "Burger di pollo croccante"}, "price": 119, "withDrink": 159}, {"name": {"nn": "Kyllingnuggets m/pommes", "en": "Chicken nuggets with fries", "de": "Chicken Nuggets mit Pommes", "fr": "Nuggets de poulet avec frites", "it": "Nuggets di pollo con patatine"}, "price": 149, "withDrink": 189}, {"name": {"nn": "Enkel nuggets", "en": "Single nugget", "de": "Einzelnes Nugget", "fr": "Nugget à l'unité", "it": "Nugget singolo"}, "price": 15}]}, {"id": "pommes", "name": {"nn": "Pommes og pølser", "en": "Fries and hot dogs", "de": "Pommes und Würstchen", "fr": "Frites et hot-dogs", "it": "Patatine e hot dog"}, "items": [{"name": {"nn": "Pommes frites", "en": "French fries", "de": "Pommes frites", "fr": "Frites", "it": "Patatine fritte"}, "price": 45}, {"name": {"nn": "Grillpølse m/brød", "en": "Grilled hot dog with bun", "de": "Grillwürstchen im Brötchen", "fr": "Hot-dog grillé, avec pain", "it": "Hot dog alla griglia con pane"}, "price": 52}, {"name": {"nn": "Grillpølse m/pommes", "en": "Grilled hot dog with fries", "de": "Grillwürstchen mit Pommes", "fr": "Hot-dog grillé, avec frites", "it": "Hot dog alla griglia con patatine"}, "price": 90}, {"name": {"nn": "Ostepølse m/bacon, m/brød", "en": "Cheese &amp; bacon dog with bun", "de": "Käse-Speck-Würstchen im Brötchen", "fr": "Hot-dog fromage et bacon, avec pain", "it": "Hot dog formaggio e bacon, con pane"}, "price": 62}, {"name": {"nn": "Ostepølse m/bacon, m/pommes", "en": "Cheese &amp; bacon dog with fries", "de": "Käse-Speck-Würstchen mit Pommes", "fr": "Hot-dog fromage et bacon, avec frites", "it": "Hot dog formaggio e bacon, con patatine"}, "price": 100}]}, {"id": "rullar", "name": {"nn": "Rullar og tallerkenrettar", "en": "Wraps and plates", "de": "Wraps und Teller", "fr": "Wraps et assiettes", "it": "Piadine e piatti"}, "items": [{"name": {"nn": "Kebabrull", "en": "Kebab wrap", "de": "Kebab-Wrap", "fr": "Wrap kebab", "it": "Piadina kebab"}, "price": 149, "withDrink": 189, "note": {"nn": "Vel mellom mix kjøtt eller kylling shawarma", "en": "Choose between mixed meat or chicken shawarma", "de": "Wähl zwischen gemischtem Fleisch oder Hähnchen-Shawarma", "fr": "Choisissez entre viande mixte ou poulet shawarma", "it": "Scegli tra carne mista o pollo shawarma"}}, {"name": {"nn": "Biffsnadder", "en": "Sliced beef stir-fry", "de": "Gebratene Rindfleischstreifen", "fr": "Émincé de bœuf sauté", "it": "Straccetti di manzo saltati"}, "price": 215, "withDrink": 255}, {"name": {"nn": "Løvstektallerken", "en": "Pan-fried steak plate", "de": "Steakteller", "fr": "Assiette de bœuf poêlé", "it": "Piatto di manzo in padella"}, "price": 195, "withDrink": 235}, {"name": {"nn": "Kebabtallerken", "en": "Kebab plate", "de": "Kebabteller", "fr": "Assiette kebab", "it": "Piatto kebab"}, "price": 189, "withDrink": 229, "note": {"nn": "Vel mellom mix kjøtt eller kylling shawarma", "en": "Choose between mixed meat or chicken shawarma", "de": "Wähl zwischen gemischtem Fleisch oder Hähnchen-Shawarma", "fr": "Choisissez entre viande mixte ou poulet shawarma", "it": "Scegli tra carne mista o pollo shawarma"}}]}, {"id": "brodmat", "name": {"nn": "Brødmat og smårettar", "en": "Sandwiches and snacks", "de": "Brote und Kleinigkeiten", "fr": "Sandwichs et en-cas", "it": "Panini e snack"}, "items": [{"name": {"nn": "Ost, pr. skive", "en": "Cheese, per slice", "de": "Käse, pro Scheibe", "fr": "Fromage, la tranche", "it": "Formaggio, a fetta"}, "price": 10}, {"name": {"nn": "Bacon, pr. skive", "en": "Bacon, per slice", "de": "Speck, pro Scheibe", "fr": "Bacon, la tranche", "it": "Bacon, a fetta"}, "price": 15}, {"name": {"nn": "Glutenfritt brød", "en": "Gluten-free bread", "de": "Glutenfreies Brot", "fr": "Pain sans gluten", "it": "Pane senza glutine"}, "price": 30}, {"name": {"nn": "Panini", "en": "Panini", "de": "Panini", "fr": "Panini", "it": "Panino toast"}, "price": 89}, {"name": {"nn": "Toast", "en": "Toasted sandwich", "de": "Toast", "fr": "Croque-monsieur", "it": "Toast"}, "price": 45}, {"name": {"nn": "Toast, glutenfri", "en": "Toasted sandwich, gluten-free", "de": "Toast, glutenfrei", "fr": "Croque-monsieur sans gluten", "it": "Toast senza glutine"}, "price": 85}, {"name": {"nn": "Minipizza", "en": "Mini pizza", "de": "Minipizza", "fr": "Mini-pizza", "it": "Mini pizza"}, "price": 39}]}], "offersPerWeek": 2, "offers": [{"name": "Skyraceburger 330 g m/ost og bacon", "desc": "Grilla med kjærleik – saftig burger med ost, bacon, salat, tomat og raudlauk. Perfekt etter Skånevik Sky Race! Ønskjer du pommes attåt, kun +45,-.", "old": "", "price": "199,-", "valid": "Skyrace-helga"}, {"name": "Powerade", "desc": "Lad deg opp – Lemon eller Mountain Blast.", "old": "", "price": "25,-", "valid": ""}], "event": {"name": "Fiskekonkurranse", "date": "15. august, kl. 13.30–15.30", "place": "Krambua, sentrumsområdet", "age": "For born t.o.m. 15 år", "desc": "Fisk frå land, innanfor sentrumsområdet. Premiar for mest fisk og tyngste fisk. Gjeldande fiskereglar og minstemål må følgjast, og foreldre har ansvar for eigne born under konkurransen.", "prize": "Gratis å delta – alle deltakarar får premie, og vinnarane får goodiebag!", "hideAfter": "2026-08-15T18:00"}};
+  var DATA = DEFAULT_DATA;
+  var lang = 'nn';
+  var flagMap = {nn:"🇳🇴",en:"🇬🇧",de:"🇩🇪",fr:"🇫🇷",it:"🇮🇹"};
+
+  function T(k){ var d = translations[lang] || translations.nn; return d[k] !== undefined ? d[k] : (translations.nn[k] || ''); }
+  function L(o){ if (!o) return ''; if (typeof o === 'string') return o; return o[lang] || o.nn || ''; }
+  function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function stripAmp(s){ return String(s).replace(/&amp;/g,'&'); }
+  function fmt(n){ n = parseFloat(String(n).replace(',','.')); if (isNaN(n)) return ''; return (Math.round(n*100)/100).toString().replace('.',',') + ',-'; }
+
+  /* ---------- Opningstider (frå data) ---------- */
+  function tp(t){ var m = /^(\d{1,2})(?::?(\d{2}))?$/.exec(String(t||'').trim()); return m ? {h:+m[1], m:+(m[2]||0)} : null; }
+  function two(n){ return n < 10 ? '0'+n : ''+n; }
+  function hNo(t){ var p = tp(t); if (!p) return ''; return p.m ? p.h+':'+two(p.m) : ''+p.h; }
+  function hFr(t){ var p = tp(t); if (!p) return ''; return p.h+'h'+(p.m ? two(p.m) : ''); }
+  function hEn(t){ var p = tp(t); if (!p) return ''; var h = p.h % 12 || 12; return h+(p.m ? ':'+two(p.m) : '')+(p.h >= 12 && p.h < 24 ? 'pm' : 'am'); }
+  function deriveHours(){
+    var h = DATA.hours || {}, o = h.open, c = h.close, f = h.foodUntil;
+    var out = {
+      nn:{a:'Ope '+hNo(o)+'–'+hNo(c)+' alle dagar', b:'Avgrensa matsal etter kl. '+hNo(f)},
+      en:{a:'Open '+hEn(o)+'–'+hEn(c)+' every day', b:'Limited food menu after '+hEn(f)},
+      de:{a:'Geöffnet '+hNo(o)+'–'+hNo(c)+' Uhr, jeden Tag', b:'Eingeschränktes Speisenangebot nach '+hNo(f)+' Uhr'},
+      fr:{a:'Ouvert de '+hFr(o)+' à '+hFr(c)+' tous les jours', b:'Offre de repas limitée après '+hFr(f)},
+      it:{a:'Aperto '+hNo(o)+'–'+hNo(c)+' tutti i giorni', b:'Offerta di cibo limitata dopo le '+hNo(f)}
+    };
+    Object.keys(out).forEach(function(l){
+      translations[l].hoursLine = out[l].a;
+      translations[l].limitedFoodNote = f ? out[l].b : '';
+    });
+  }
+
+  /* ---------- i18n ---------- */
+  function applyLang(l){
+    lang = translations[l] ? l : 'nn';
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var v = translations[lang][el.getAttribute('data-i18n')];
+      if (v !== undefined) el.innerHTML = v;
+    });
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-lang]').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
+    var t = document.getElementById('langToggle');
+    t.querySelector('.flag').textContent = flagMap[lang];
+    t.querySelector('.code').textContent = lang.toUpperCase();
+    try{ localStorage.setItem('krambuaLang', lang); }catch(e){}
+    renderCategory(); renderDeals(); renderEvent(); setTitle();
+  }
+
+  /* ---------- Meny ---------- */
+  function cats(){ return (DATA.categories || []); }
+  function catById(id){ return cats().filter(function(c){ return c.id === id; })[0]; }
+  function activeCat(){
+    var r = parse(), all = cats();
+    if (r.sub && catById(r.sub)) return r.sub;
+    return all.length ? all[0].id : '';
+  }
+  function buildChips(){
+    var act = activeCat();
+    document.getElementById('chipsIn').innerHTML = cats().map(function(c){
+      return '<a class="chip'+(c.id === act ? ' on' : '')+'" href="#/meny/'+esc(c.id)+'"'+(c.id === act ? ' aria-current="true"' : '')+'>'+esc(L(c.name))+'</a>';
+    }).join('');
+    var on = document.querySelector('#chipsIn .chip.on');
+    if (on && on.scrollIntoView){ var box = document.getElementById('chipsIn'); box.scrollLeft = on.offsetLeft - (box.clientWidth - on.offsetWidth)/2; }
+  }
+  var lastCat = null;
+  function renderCategory(){
+    buildChips();
+    var box = document.getElementById('catBody'), c = catById(activeCat());
+    if (!c){ box.innerHTML = ''; return; }
+    var ad = DATA.addons || {};
+    var tags = '<div class="addons-inline">'+
+      '<span class="tag">'+T('addCheese')+' '+fmt(ad.cheese)+'</span>'+
+      '<span class="tag">'+T('addBacon')+' '+fmt(ad.bacon)+'</span>'+
+      '<span class="tag">'+T('addFries')+' '+fmt(ad.fries)+'</span></div>';
+    var items = (c.items || []).map(function(it){
+      return '<li><div class="item-row"><span class="name">'+esc(L(it.name))+'</span><span class="price">'+fmt(it.price)+'</span></div>'+
+        (it.withDrink ? '<span class="with-drink">'+T('withDrink')+' <b>'+fmt(it.withDrink)+'</b></span>' : '')+
+        (it.note && L(it.note) ? '<span class="choice-note">'+esc(L(it.note))+'</span>' : '')+
+        (c.addons ? tags : '')+'</li>';
+    }).join('');
+    var box2 = c.addons ? '<div class="addon-box"><h3>'+T('addonTitle')+'</h3><p class="hint">'+T('addonHint')+'</p><div class="addon-grid">'+
+      '<div class="addon-chip"><span>'+T('addCheeseWord')+'</span><span>+'+fmt(ad.cheese)+'</span></div>'+
+      '<div class="addon-chip"><span>'+T('addBaconWord')+'</span><span>+'+fmt(ad.bacon)+'</span></div>'+
+      '<div class="addon-chip"><span>'+T('addFriesWord')+'</span><span>+'+fmt(ad.fries)+'</span></div>'+
+      '<div class="addon-chip"><span>'+T('addDrinkWord')+'</span><span>+'+fmt(ad.drink)+'</span></div></div></div>' : '';
+    var all = cats(), i = all.indexOf(c), p = all[(i-1+all.length)%all.length], n = all[(i+1)%all.length];
+    box.innerHTML =
+      '<h2 class="cat-title">'+esc(L(c.name))+'</h2>'+
+      (c.note && L(c.note) ? '<span class="category-note">'+esc(L(c.note))+'</span>' : '')+
+      '<ul class="dishes">'+items+'</ul>'+box2+
+      (all.length > 1 ? '<div class="cat-pager"><a class="prev" href="#/meny/'+esc(p.id)+'"><small>← '+T('prevLbl')+'</small><span class="l">'+esc(L(p.name))+'</span></a>'+
+      '<a class="next" href="#/meny/'+esc(n.id)+'"><small>'+T('nextLbl')+' →</small><span class="l">'+esc(L(n.name))+'</span></a></div>' : '');
+    if (lastCat !== null && lastCat !== c.id){ box.classList.remove('fade'); void box.offsetWidth; box.classList.add('fade'); }
+    lastCat = c.id;
+  }
+  // sveip sideleis for å byte kategori
+  (function(){
+    var x0 = 0, y0 = 0, t0 = 0;
+    var el = document.getElementById('catBody');
+    el.addEventListener('touchstart', function(e){ var t = e.changedTouches[0]; x0 = t.clientX; y0 = t.clientY; t0 = Date.now(); }, {passive:true});
+    el.addEventListener('touchend', function(e){
+      var t = e.changedTouches[0], dx = t.clientX - x0, dy = t.clientY - y0;
+      if (Date.now() - t0 > 600 || Math.abs(dx) < 70 || Math.abs(dy) > 45 || Math.abs(dx) < Math.abs(dy) * 2) return;
+      var all = cats(), i = all.map(function(c){ return c.id; }).indexOf(activeCat()), j = i + (dx < 0 ? 1 : -1);
+      if (j < 0 || j >= all.length) return;
+      location.hash = '#/meny/' + all[j].id;
+    }, {passive:true});
+  })();
+
+  /* ---------- Tilbod ---------- */
+  var months = {
+    nn:["januar","februar","mars","april","mai","juni","juli","august","september","oktober","november","desember"],
+    en:["January","February","March","April","May","June","July","August","September","October","November","December"],
+    de:["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"],
+    fr:["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],
+    it:["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"]
+  };
+  function getISOWeek(d0){
+    var d = new Date(Date.UTC(d0.getFullYear(), d0.getMonth(), d0.getDate()));
+    var dn = d.getUTCDay() || 7; d.setUTCDate(d.getUTCDate() + 4 - dn);
+    var ys = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    return Math.ceil((((d - ys)/86400000)+1)/7);
+  }
+  function weekRange(d0){
+    var m = months[lang] || months.nn;
+    var day = d0.getDay() || 7, mon = new Date(d0); mon.setDate(d0.getDate()-day+1);
+    var sun = new Date(mon); sun.setDate(mon.getDate()+6);
+    var a = mon.getMonth()===sun.getMonth() ? mon.getDate()+'.' : mon.getDate()+'. '+m[mon.getMonth()];
+    return a+'–'+sun.getDate()+'. '+m[sun.getMonth()]+' '+sun.getFullYear();
+  }
+  function renderDeals(){
+    var offers = DATA.offers || [];
+    var box = document.getElementById('dealContainer'), empty = document.getElementById('dealEmpty'), note = document.getElementById('weekNote');
+    var now = new Date();
+    var ended = now.getDay()===0 && now.getHours()>=21;
+    if (!offers.length || ended){
+      box.style.display='none'; note.innerHTML='&nbsp;';
+      empty.textContent = ended ? T('dealEnded') : T('dealNone'); empty.style.display='block'; return;
+    }
+    box.style.display=''; empty.style.display='none';
+    var wk = getISOWeek(now);
+    note.textContent = T('dealWeek')+' '+wk+' · '+weekRange(now);
+    var per = parseInt(DATA.offersPerWeek,10) || 2;
+    var count = Math.min(per, offers.length), start = wk % offers.length, h = '';
+    for (var i=0;i<count;i++){
+      var o = offers[(start+i)%offers.length];
+      h += '<article class="deal-card"><span class="deal-badge">'+T('dealBadge')+'</span>'+
+        '<h2 class="deal-name">'+esc(o.name)+'</h2>'+(o.desc?'<p class="deal-desc">'+esc(o.desc)+'</p>':'')+
+        '<div class="deal-foot"><span class="deal-price">'+esc(o.price)+'</span>'+(o.old?'<span class="deal-old">'+esc(o.old)+'</span>':'')+(o.valid?'<span class="deal-valid">'+esc(o.valid)+'</span>':'')+'</div></article>';
+    }
+    box.innerHTML = h;
+  }
+
+  /* ---------- Arrangement ---------- */
+  function eventActive(){
+    var ev = DATA.event;
+    if (!ev || !ev.name) return false;
+    if (ev.hideAfter && new Date() >= new Date(ev.hideAfter)) return false;
+    return true;
+  }
+  function renderEvent(){
+    var on = eventActive(), ev = DATA.event;
+    document.getElementById('drawerEvent').hidden = !on;
+    document.getElementById('homeEvent').hidden = !on;
+    if (on) document.getElementById('homeEventName').textContent = ev.name+(ev.date ? ' · '+ev.date : '');
+    var box = document.getElementById('eventContainer'), empty = document.getElementById('eventEmpty');
+    if (!on){ box.innerHTML=''; empty.style.display='block'; return; }
+    empty.style.display='none';
+    var ic = function(p){ return '<svg class="i" viewBox="0 0 24 24">'+p+'</svg>'; };
+    box.innerHTML = '<article class="event"><span class="deal-badge">'+T('eventTitle')+'</span><h2 class="nm">'+esc(ev.name)+'</h2><div class="meta">'+
+      (ev.date?'<div>'+ic('<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>')+'<span>'+esc(ev.date)+'</span></div>':'')+
+      (ev.place?'<div>'+ic('<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>')+'<span>'+esc(ev.place)+'</span></div>':'')+
+      (ev.age?'<div>'+ic('<circle cx="9" cy="7" r="4"/><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>')+'<span>'+esc(ev.age)+'</span></div>':'')+
+      '</div>'+(ev.desc?'<p>'+esc(ev.desc)+'</p>':'')+(ev.prize?'<p class="prize">'+esc(ev.prize)+'</p>':'')+'</article>';
+  }
+
+  /* ---------- Router ---------- */
+  var titles = {'meny':'menuTitle','tilbod':'dealTitle','informasjon':'navInfo','kontakt':'contactTitle','om-oss':'navAbout','allergenar':'navAllergens','arrangement':'eventTitle'};
+  function parse(){
+    var h = (location.hash || '#/').replace(/^#\/?/,'');
+    var parts = h.split('/');
+    return {top: parts[0] || '', sub: parts[1] || ''};
+  }
+  function setTitle(){
+    var r = parse(), name = '';
+    if (r.top === 'meny' && catById(activeCat())) name = stripAmp(L(catById(activeCat()).name));
+    else if (r.top && titles[r.top]) name = stripAmp(T(titles[r.top]));
+    document.title = (name ? name+' – ' : '') + 'Krambua Bensin & Storkiosk' + (name ? '' : ' – '+stripAmp(T('menuTitle')) + ' & '+(lang==='nn'?'prisar':'prices'));
+  }
+  var wasMenu = false;
+  function route(first){
+    var r = parse(), name = r.top, target = null;
+    document.querySelectorAll('.page').forEach(function(p){ if (p.getAttribute('data-route') === name) target = p; });
+    if (!target){ target = document.querySelector('.page[data-route=""]'); name = ''; }
+    var isMenu = name === 'meny', isHome = name === '';
+    renderCategory();
+    document.querySelectorAll('.page').forEach(function(p){ p.classList.toggle('active', p === target); });
+    document.body.classList.toggle('is-home', isHome);
+    var cur = isHome ? 'home' : name;
+    document.querySelectorAll('[data-route-link]').forEach(function(a){ a.classList.toggle('current', a.getAttribute('data-route-link') === cur); });
+    closeNav(); setTitle();
+    if (!first){
+      if (isMenu && wasMenu){
+        var top = document.getElementById('menuTop').getBoundingClientRect().bottom + window.pageYOffset - 70;
+        if (window.pageYOffset > top) window.scrollTo(0, Math.max(0, top));
+      } else window.scrollTo(0,0);
+    }
+    wasMenu = isMenu;
+  }
+  window.addEventListener('hashchange', function(){ route(false); });
+
+  /* ---------- Drawer & språk ---------- */
+  var burger = document.getElementById('burger');
+  function openNav(){ document.body.classList.add('nav-open'); burger.setAttribute('aria-expanded','true'); }
+  function closeNav(){ document.body.classList.remove('nav-open'); burger.setAttribute('aria-expanded','false'); }
+  burger.addEventListener('click', function(){ document.body.classList.contains('nav-open') ? closeNav() : openNav(); });
+  document.getElementById('drawer').addEventListener('click', function(e){
+    var a = e.target.closest('a'); if (a && a.getAttribute('href') === (location.hash || '#/')) closeNav();
+  });
+  var langToggle = document.getElementById('langToggle'), langMenu = document.getElementById('langMenu');
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape'){ closeNav(); langMenu.classList.remove('open'); } });
+  langToggle.addEventListener('click', function(e){ e.stopPropagation(); langMenu.classList.toggle('open'); langToggle.setAttribute('aria-expanded', langMenu.classList.contains('open')); });
+  document.addEventListener('click', function(e){ if (!langMenu.contains(e.target) && e.target !== langToggle) langMenu.classList.remove('open'); });
+  document.querySelectorAll('[data-lang]').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')); langMenu.classList.remove('open'); });
+  });
+
+  /* ---------- Start: hent data.json (admin-sida oppdaterer han) ---------- */
+  function boot(d){
+    if (d && d.categories) DATA = d;
+    deriveHours();
+    var saved = 'nn'; try{ saved = localStorage.getItem('krambuaLang') || 'nn'; }catch(e){}
+    applyLang(saved);
+    route(true);
+  }
+  var done = false;
+  function once(d){ if (done) return; done = true; boot(d); }
+  setTimeout(function(){ once(null); }, 3000);
+  try{
+    fetch('data.json?v='+Date.now(), {cache:'no-store'})
+      .then(function(r){ if (!r.ok) throw new Error('http'); return r.json(); })
+      .then(function(d){ once(d); })
+      .catch(function(){ once(null); });
+  }catch(e){ once(null); }
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+KRAMBUA – NY NETTSIDE MED ADMIN
+
+Innhald:
+  index.html        Sjølve nettsida (ligg på framsida: menyen)
+  data.json         Alle prisar, tilbod, arrangement og opningstider
+  admin/index.html  Admin-sida  ->  krambua-skånevik.no/admin
+  images/           Bilete og logo
+  tilbod.html, allergener.html, arrangement.html   Sender gamle lenker til rett side
+  og-image.jpg, CNAME
+
+SLIK LASTAR DU OPP (når du har godkjent designen)
+1. Gå til github.com/krambuabensin-code/Krambua-meny
+2. Add file -> Upload files. Dra HEILE innhaldet i denne mappa inn (òg mappene "admin" og "images").
+3. Vel "Commit changes". Vent ca. 1 minutt.
+   Filene med same namn vert erstatta automatisk.
+
+SLIK FÅR DU TILGANG TIL /admin (éin gong)
+1. Opne krambua-skånevik.no/admin
+2. Følg stega på sida for å lage ein tilgangsnøkkel (Fine-grained token,
+   berre repoet Krambua-meny, Contents = Read and write).
+3. Lim inn nøkkelen og trykk "Koble til".
+
+BRUK
+- Endre pris/tilbod/arrangement/tider -> trykk "Lagre". Live etter ca. 1 minutt.
+- Gjorde du feil? På GitHub -> data.json -> History kan du gå tilbake til ei tidlegare utgåve.

@@ -1,0 +1,352 @@
+{
+  "hours": {
+    "open": "10:00",
+    "close": "21:00",
+    "foodUntil": "20:30"
+  },
+  "addons": {
+    "cheese": 10,
+    "bacon": 15,
+    "fries": 45,
+    "drink": 40
+  },
+  "categories": [
+    {
+      "id": "burgerar",
+      "name": {
+        "nn": "Burgerar",
+        "en": "Burgers",
+        "de": "Burger",
+        "fr": "Burgers",
+        "it": "Burger"
+      },
+      "addons": true,
+      "items": [
+        {
+          "name": {
+            "nn": "Hamburger 160 g",
+            "en": "Hamburger 160 g",
+            "de": "Hamburger 160 g",
+            "fr": "Hamburger 160 g",
+            "it": "Hamburger 160 g"
+          },
+          "price": 145,
+          "withDrink": 185
+        },
+        {
+          "name": {
+            "nn": "Dobbel burger 320 g",
+            "en": "Double burger 320 g",
+            "de": "Doppelburger 320 g",
+            "fr": "Double burger 320 g",
+            "it": "Doppio burger 320 g"
+          },
+          "price": 200,
+          "withDrink": 240
+        },
+        {
+          "name": {
+            "nn": "Løvstektburger",
+            "en": "Pan-fried steak burger",
+            "de": "Gebratener Steakburger",
+            "fr": "Burger au bœuf poêlé",
+            "it": "Burger di manzo in padella"
+          },
+          "price": 145,
+          "withDrink": 185
+        }
+      ]
+    },
+    {
+      "id": "kylling",
+      "name": {
+        "nn": "Kylling og nuggets",
+        "en": "Chicken and nuggets",
+        "de": "Hähnchen und Nuggets",
+        "fr": "Poulet et nuggets",
+        "it": "Pollo e nuggets"
+      },
+      "note": {
+        "nn": "All kylling er panert i mais og heilt glutenfritt",
+        "en": "All our chicken is corn-breaded and completely gluten-free",
+        "de": "Unser gesamtes Hähnchen ist mit Maispanade paniert und komplett glutenfrei",
+        "fr": "Tout notre poulet est pané au maïs et entièrement sans gluten",
+        "it": "Tutto il nostro pollo è impanato nel mais ed è completamente senza glutine"
+      },
+      "items": [
+        {
+          "name": {
+            "nn": "Heilsprø kyllingburger",
+            "en": "Crispy chicken burger",
+            "de": "Knuspriger Hähnchenburger",
+            "fr": "Burger de poulet croustillant",
+            "it": "Burger di pollo croccante"
+          },
+          "price": 119,
+          "withDrink": 159
+        },
+        {
+          "name": {
+            "nn": "Kyllingnuggets m/pommes",
+            "en": "Chicken nuggets with fries",
+            "de": "Chicken Nuggets mit Pommes",
+            "fr": "Nuggets de poulet avec frites",
+            "it": "Nuggets di pollo con patatine"
+          },
+          "price": 149,
+          "withDrink": 189
+        },
+        {
+          "name": {
+            "nn": "Enkel nuggets",
+            "en": "Single nugget",
+            "de": "Einzelnes Nugget",
+            "fr": "Nugget à l'unité",
+            "it": "Nugget singolo"
+          },
+          "price": 15
+        }
+      ]
+    },
+    {
+      "id": "pommes",
+      "name": {
+        "nn": "Pommes og pølser",
+        "en": "Fries and hot dogs",
+        "de": "Pommes und Würstchen",
+        "fr": "Frites et hot-dogs",
+        "it": "Patatine e hot dog"
+      },
+      "items": [
+        {
+          "name": {
+            "nn": "Pommes frites",
+            "en": "French fries",
+            "de": "Pommes frites",
+            "fr": "Frites",
+            "it": "Patatine fritte"
+          },
+          "price": 45
+        },
+        {
+          "name": {
+            "nn": "Grillpølse m/brød",
+            "en": "Grilled hot dog with bun",
+            "de": "Grillwürstchen im Brötchen",
+            "fr": "Hot-dog grillé, avec pain",
+            "it": "Hot dog alla griglia con pane"
+          },
+          "price": 52
+        },
+        {
+          "name": {
+            "nn": "Grillpølse m/pommes",
+            "en": "Grilled hot dog with fries",
+            "de": "Grillwürstchen mit Pommes",
+            "fr": "Hot-dog grillé, avec frites",
+            "it": "Hot dog alla griglia con patatine"
+          },
+          "price": 90
+        },
+        {
+          "name": {
+            "nn": "Ostepølse m/bacon, m/brød",
+            "en": "Cheese &amp; bacon dog with bun",
+            "de": "Käse-Speck-Würstchen im Brötchen",
+            "fr": "Hot-dog fromage et bacon, avec pain",
+            "it": "Hot dog formaggio e bacon, con pane"
+          },
+          "price": 62
+        },
+        {
+          "name": {
+            "nn": "Ostepølse m/bacon, m/pommes",
+            "en": "Cheese &amp; bacon dog with fries",
+            "de": "Käse-Speck-Würstchen mit Pommes",
+            "fr": "Hot-dog fromage et bacon, avec frites",
+            "it": "Hot dog formaggio e bacon, con patatine"
+          },
+          "price": 100
+        }
+      ]
+    },
+    {
+      "id": "rullar",
+      "name": {
+        "nn": "Rullar og tallerkenrettar",
+        "en": "Wraps and plates",
+        "de": "Wraps und Teller",
+        "fr": "Wraps et assiettes",
+        "it": "Piadine e piatti"
+      },
+      "items": [
+        {
+          "name": {
+            "nn": "Kebabrull",
+            "en": "Kebab wrap",
+            "de": "Kebab-Wrap",
+            "fr": "Wrap kebab",
+            "it": "Piadina kebab"
+          },
+          "price": 149,
+          "withDrink": 189,
+          "note": {
+            "nn": "Vel mellom mix kjøtt eller kylling shawarma",
+            "en": "Choose between mixed meat or chicken shawarma",
+            "de": "Wähl zwischen gemischtem Fleisch oder Hähnchen-Shawarma",
+            "fr": "Choisissez entre viande mixte ou poulet shawarma",
+            "it": "Scegli tra carne mista o pollo shawarma"
+          }
+        },
+        {
+          "name": {
+            "nn": "Biffsnadder",
+            "en": "Sliced beef stir-fry",
+            "de": "Gebratene Rindfleischstreifen",
+            "fr": "Émincé de bœuf sauté",
+            "it": "Straccetti di manzo saltati"
+          },
+          "price": 215,
+          "withDrink": 255
+        },
+        {
+          "name": {
+            "nn": "Løvstektallerken",
+            "en": "Pan-fried steak plate",
+            "de": "Steakteller",
+            "fr": "Assiette de bœuf poêlé",
+            "it": "Piatto di manzo in padella"
+          },
+          "price": 195,
+          "withDrink": 235
+        },
+        {
+          "name": {
+            "nn": "Kebabtallerken",
+            "en": "Kebab plate",
+            "de": "Kebabteller",
+            "fr": "Assiette kebab",
+            "it": "Piatto kebab"
+          },
+          "price": 189,
+          "withDrink": 229,
+          "note": {
+            "nn": "Vel mellom mix kjøtt eller kylling shawarma",
+            "en": "Choose between mixed meat or chicken shawarma",
+            "de": "Wähl zwischen gemischtem Fleisch oder Hähnchen-Shawarma",
+            "fr": "Choisissez entre viande mixte ou poulet shawarma",
+            "it": "Scegli tra carne mista o pollo shawarma"
+          }
+        }
+      ]
+    },
+    {
+      "id": "brodmat",
+      "name": {
+        "nn": "Brødmat og smårettar",
+        "en": "Sandwiches and snacks",
+        "de": "Brote und Kleinigkeiten",
+        "fr": "Sandwichs et en-cas",
+        "it": "Panini e snack"
+      },
+      "items": [
+        {
+          "name": {
+            "nn": "Ost, pr. skive",
+            "en": "Cheese, per slice",
+            "de": "Käse, pro Scheibe",
+            "fr": "Fromage, la tranche",
+            "it": "Formaggio, a fetta"
+          },
+          "price": 10
+        },
+        {
+          "name": {
+            "nn": "Bacon, pr. skive",
+            "en": "Bacon, per slice",
+            "de": "Speck, pro Scheibe",
+            "fr": "Bacon, la tranche",
+            "it": "Bacon, a fetta"
+          },
+          "price": 15
+        },
+        {
+          "name": {
+            "nn": "Glutenfritt brød",
+            "en": "Gluten-free bread",
+            "de": "Glutenfreies Brot",
+            "fr": "Pain sans gluten",
+            "it": "Pane senza glutine"
+          },
+          "price": 30
+        },
+        {
+          "name": {
+            "nn": "Panini",
+            "en": "Panini",
+            "de": "Panini",
+            "fr": "Panini",
+            "it": "Panino toast"
+          },
+          "price": 89
+        },
+        {
+          "name": {
+            "nn": "Toast",
+            "en": "Toasted sandwich",
+            "de": "Toast",
+            "fr": "Croque-monsieur",
+            "it": "Toast"
+          },
+          "price": 45
+        },
+        {
+          "name": {
+            "nn": "Toast, glutenfri",
+            "en": "Toasted sandwich, gluten-free",
+            "de": "Toast, glutenfrei",
+            "fr": "Croque-monsieur sans gluten",
+            "it": "Toast senza glutine"
+          },
+          "price": 85
+        },
+        {
+          "name": {
+            "nn": "Minipizza",
+            "en": "Mini pizza",
+            "de": "Minipizza",
+            "fr": "Mini-pizza",
+            "it": "Mini pizza"
+          },
+          "price": 39
+        }
+      ]
+    }
+  ],
+  "offersPerWeek": 2,
+  "offers": [
+    {
+      "name": "Skyraceburger 330 g m/ost og bacon",
+      "desc": "Grilla med kjærleik – saftig burger med ost, bacon, salat, tomat og raudlauk. Perfekt etter Skånevik Sky Race! Ønskjer du pommes attåt, kun +45,-.",
+      "old": "",
+      "price": "199,-",
+      "valid": "Skyrace-helga"
+    },
+    {
+      "name": "Powerade",
+      "desc": "Lad deg opp – Lemon eller Mountain Blast.",
+      "old": "",
+      "price": "25,-",
+      "valid": ""
+    }
+  ],
+  "event": {
+    "name": "Fiskekonkurranse",
+    "date": "15. august, kl. 13.30–15.30",
+    "place": "Krambua, sentrumsområdet",
+    "age": "For born t.o.m. 15 år",
+    "desc": "Fisk frå land, innanfor sentrumsområdet. Premiar for mest fisk og tyngste fisk. Gjeldande fiskereglar og minstemål må følgjast, og foreldre har ansvar for eigne born under konkurransen.",
+    "prize": "Gratis å delta – alle deltakarar får premie, og vinnarane får goodiebag!",
+    "hideAfter": "2026-08-15T18:00"
+  }
+}

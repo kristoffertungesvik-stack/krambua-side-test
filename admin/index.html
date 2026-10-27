@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="nn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin – Krambua</title>
+<link rel="icon" type="image/png" href="../images/icon-32.png">
+<style>
+:root{--bg:#F7F5F0;--paper:#fff;--ink:#1F1B18;--soft:#6F675E;--faint:#A39B90;--line:#E4DFD5;--accent:#A8402F;--ok:#3F7A4C;--bad:#B3261E}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:16px;padding-bottom:110px}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+header.top{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+header.top img{height:28px}
+header.top .r{display:flex;gap:10px;align-items:center;font-size:14px}
+a{color:var(--accent)}
+h1{font-size:26px;font-weight:600;margin:28px 0 6px}
+h2{font-size:18px;font-weight:600;margin:0 0 12px}
+p.lead{color:var(--soft);margin-bottom:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:14px}
+label{display:block;font-size:13px;font-weight:600;color:var(--soft);margin:12px 0 4px}
+label:first-child{margin-top:0}
+input[type=text],input[type=password],input[type=number],input[type=time],input[type=datetime-local],textarea,select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff;color:var(--ink)}
+input:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+textarea{min-height:84px;resize:vertical}
+.row{display:grid;gap:10px}
+.row.c2{grid-template-columns:1fr 1fr}
+.row.c3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:560px){.row.c3{grid-template-columns:1fr 1fr}}
+button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--line);background:#fff;padding:9px 14px;color:var(--ink)}
+button:hover{border-color:var(--ink)}
+button.primary{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:600;padding:12px 22px}
+button.primary:hover{background:var(--accent);border-color:var(--accent)}
+button.danger{color:var(--bad)}
+button.small{padding:5px 10px;font-size:13px}
+button:disabled{opacity:.5;cursor:default}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:22px 0 18px;overflow-x:auto}
+.tabs button{border:0;border-bottom:3px solid transparent;border-radius:0;background:none;padding:10px 14px;font-weight:600;color:var(--soft);white-space:nowrap}
+.tabs button.on{color:var(--ink);border-bottom-color:var(--accent)}
+.tools{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.item{border:1px solid var(--line);border-radius:8px;padding:12px;margin-bottom:10px;background:#FCFBF8}
+.item .head{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:8px}
+details{margin-top:8px}
+details>summary{cursor:pointer;font-size:13px;color:var(--soft)}
+details .row{margin-top:8px}
+.cat>summary{font-size:17px;font-weight:600;color:var(--ink);padding:4px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.cat>summary::-webkit-details-marker{display:none}
+.cat>summary::after{content:"▾";color:var(--faint)}
+.cat[open]>summary::after{content:"▴"}
+.help{font-size:14px;color:var(--soft)}
+.help ol{margin:8px 0 8px 20px}
+.help li{margin-bottom:6px}
+code{background:#EFEBE2;padding:1px 6px;border-radius:4px;font-size:13px}
+.savebar{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);padding:12px 0 calc(12px + env(safe-area-inset-bottom));z-index:20}
+.savebar .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between}
+.status{font-size:14px;color:var(--soft)}
+.status.ok{color:var(--ok);font-weight:600}
+.status.bad{color:var(--bad);font-weight:600}
+.dirty{color:var(--accent);font-weight:600}
+.hidden{display:none!important}
+.chk{display:flex;align-items:center;gap:8px;font-size:15px;color:var(--ink);font-weight:400;margin:12px 0 0}
+.chk input{width:18px;height:18px}
+.empty{color:var(--faint);padding:10px 0}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <img src="../images/logo.png" alt="Krambua">
+  <div class="r"><a href="../" target="_blank" rel="noopener">Sjå nettsida ↗</a><button class="small hidden" id="logoutBtn">Logg ut</button></div>
+</div></header>
+
+<div class="wrap">
+
+<!-- ======== Innlogging ======== -->
+<section id="loginView">
+  <h1>Admin</h1>
+  <p class="lead">Her endrar du prisar, tilbod, arrangement og opningstider på nettsida.</p>
+  <div class="card">
+    <h2>Koble til</h2>
+    <label for="tokenIn">Tilgangsnøkkel frå GitHub</label>
+    <input type="password" id="tokenIn" placeholder="github_pat_…" autocomplete="off">
+    <details><summary>Endre repo (vanlegvis ikkje nødvendig)</summary>
+      <div class="row c2">
+        <div><label for="repoIn">Repo</label><input type="text" id="repoIn" value="krambuabensin-code/Krambua-meny"></div>
+        <div><label for="branchIn">Branch</label><input type="text" id="branchIn" value="main"></div>
+      </div>
+    </details>
+    <div class="tools"><button class="primary" id="loginBtn">Koble til</button></div>
+    <p class="status" id="loginStatus" style="margin-top:10px"></p>
+  </div>
+  <div class="card help">
+    <h2>Slik lagar du tilgangsnøkkelen (éin gong)</h2>
+    <ol>
+      <li>Logg inn på <b>github.com</b> og gå til <b>Settings → Developer settings → Personal access tokens → Fine-grained tokens</b>, eller opne <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">denne lenka</a>.</li>
+      <li>Namn: <code>Krambua admin</code>. Utløp: vel lengst mogleg (til dømes 1 år).</li>
+      <li>Under <b>Repository access</b>: vel <b>Only select repositories</b> og vel <code>Krambua-meny</code>.</li>
+      <li>Under <b>Permissions → Repository permissions</b>: set <b>Contents</b> til <b>Read and write</b>.</li>
+      <li>Trykk <b>Generate token</b>, kopier nøkkelen og lim han inn her. Nettlesaren hugsar han på denne eininga.</li>
+    </ol>
+    <p>Nøkkelen gjeld berre dette eine repoet. Mistar du han, slettar du han på same stad på GitHub. Del han ikkje med andre.</p>
+  </div>
+</section>
+
+<!-- ======== Editor ======== -->
+<section id="editView" class="hidden">
+  <h1>Rediger nettsida</h1>
+  <p class="lead">Endringar går live ca. eitt minutt etter at du trykkjer <b>Lagre</b>.</p>
+  <div class="tabs" id="tabs">
+    <button data-tab="offers" class="on">Tilbod</button>
+    <button data-tab="menu">Meny og prisar</button>
+    <button data-tab="event">Arrangement</button>
+    <button data-tab="hours">Opningstider</button>
+  </div>
+  <div id="tab-offers"></div>
+  <div id="tab-menu" class="hidden"></div>
+  <div id="tab-event" class="hidden"></div>
+  <div id="tab-hours" class="hidden"></div>
+</section>
+</div>
+
+<div class="savebar hidden" id="saveBar"><div class="wrap">
+  <span class="status" id="saveStatus">Ingen endringar</span>
+  <div style="display:flex;gap:8px">
+    <button id="reloadBtn">Forkast</button>
+    <button class="primary" id="saveBtn" disabled>Lagre</button>
+  </div>
+</div></div>
+
+<script>
+(function(){
+  var LANGS = [['nn','Nynorsk'],['en','Engelsk'],['de','Tysk'],['fr','Fransk'],['it','Italiensk']];
+  var cfg = {token:'', repo:'krambuabensin-code/Krambua-meny', branch:'main', path:'data.json'};
+  var data = null, sha = null, dirty = false, curTab = 'offers';
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  try{ var s = JSON.parse(localStorage.getItem('krambuaAdmin') || 'null'); if (s){ cfg.token = s.token || ''; cfg.repo = s.repo || cfg.repo; cfg.branch = s.branch || cfg.branch; } }catch(e){}
+  $('repoIn').value = cfg.repo; $('branchIn').value = cfg.branch;
+
+  /* ---------- GitHub API ---------- */
+  function api(method, body){
+    var url = 'https://api.github.com/repos/' + cfg.repo + '/contents/' + cfg.path + (method === 'GET' ? '?ref=' + encodeURIComponent(cfg.branch) + '&t=' + Date.now() : '');
+    return fetch(url, {
+      method: method,
+      headers: {'Authorization':'Bearer ' + cfg.token, 'Accept':'application/vnd.github+json', 'X-GitHub-Api-Version':'2022-11-28'},
+      body: body ? JSON.stringify(body) : undefined,
+      cache: 'no-store'
+    }).then(function(r){
+      return r.json().catch(function(){ return {}; }).then(function(j){
+        if (!r.ok){ var e = new Error(j.message || ('HTTP ' + r.status)); e.status = r.status; throw e; }
+        return j;
+      });
+    });
+  }
+  function b64d(b64){ var bin = atob(b64.replace(/\s/g,'')); var bytes = new Uint8Array(bin.length); for (var i=0;i<bin.length;i++) bytes[i] = bin.charCodeAt(i); return new TextDecoder('utf-8').decode(bytes); }
+  function b64e(str){ var bytes = new TextEncoder().encode(str), bin = ''; for (var i=0;i<bytes.length;i++) bin += String.fromCharCode(bytes[i]); return btoa(bin); }
+
+  function load(){
+    return api('GET').then(function(j){
+      sha = j.sha; data = JSON.parse(b64d(j.content));
+      normalize(); setDirty(false); renderAll();
+    });
+  }
+  function normalize(){
+    data.categories = data.categories || []; data.offers = data.offers || [];
+    data.addons = data.addons || {cheese:10,bacon:15,fries:45,drink:40};
+    data.hours = data.hours || {open:'09:00',close:'21:00',foodUntil:'20:30'};
+    if (!data.offersPerWeek) data.offersPerWeek = 2;
+  }
+
+  /* ---------- Login ---------- */
+  function showEditor(on){
+    $('loginView').classList.toggle('hidden', on); $('editView').classList.toggle('hidden', !on);
+    $('saveBar').classList.toggle('hidden', !on); $('logoutBtn').classList.toggle('hidden', !on);
+  }
+  function connect(){
+    cfg.token = $('tokenIn').value.trim() || cfg.token; cfg.repo = $('repoIn').value.trim(); cfg.branch = $('branchIn').value.trim() || 'main';
+    var st = $('loginStatus'); st.className = 'status';
+    if (!cfg.token){ st.textContent = 'Lim inn nøkkelen først.'; st.className = 'status bad'; return; }
+    st.textContent = 'Koblar til …';
+    load().then(function(){
+      try{ localStorage.setItem('krambuaAdmin', JSON.stringify({token:cfg.token, repo:cfg.repo, branch:cfg.branch})); }catch(e){}
+      showEditor(true);
+    }).catch(function(e){
+      st.className = 'status bad';
+      st.textContent = e.status === 401 ? 'Nøkkelen vart ikkje godtatt. Sjekk at du kopierte heile.' :
+        e.status === 404 ? 'Fann ikkje data.json. Sjekk repo-namnet og at nøkkelen har tilgang til repoet, og at data.json er lasta opp.' :
+        'Feil: ' + e.message;
+    });
+  }
+  $('loginBtn').onclick = connect;
+  $('tokenIn').addEventListener('keydown', function(e){ if (e.key === 'Enter') connect(); });
+  $('logoutBtn').onclick = function(){ if (dirty && !confirm('Du har ulagra endringar. Logge ut likevel?')) return; try{ localStorage.removeItem('krambuaAdmin'); }catch(e){} location.reload(); };
+  if (cfg.token){ $('tokenIn').value = cfg.token; connect(); }
+
+  /* ---------- Dirty / save ---------- */
+  function setDirty(d){
+    dirty = d; $('saveBtn').disabled = !d;
+    var s = $('saveStatus'); s.className = 'status' + (d ? ' dirty' : ''); s.textContent = d ? 'Ulagra endringar' : 'Ingen endringar';
+  }
+  window.addEventListener('beforeunload', function(e){ if (dirty){ e.preventDefault(); e.returnValue = ''; } });
+  function validate(){
+    var errs = [];
+    data.categories.forEach(function(c){
+      if (!c.name || !String(c.name.nn || '').trim()) errs.push('Ein kategori manglar namn.');
+      (c.items || []).forEach(function(it){
+        var n = it.name && it.name.nn ? it.name.nn : '(utan namn)';
+        if (!it.name || !String(it.name.nn || '').trim()) errs.push('Ei rett i «' + (c.name && c.name.nn || '') + '» manglar namn.');
+        if (isNaN(parseFloat(String(it.price).replace(',','.')))) errs.push('«' + n + '» har ugyldig pris.');
+        if (it.withDrink !== undefined && it.withDrink !== '' && isNaN(parseFloat(String(it.withDrink).replace(',','.')))) errs.push('«' + n + '» har ugyldig pris med drikke.');
+      });
+    });
+    data.offers.forEach(function(o){ if (!String(o.name || '').trim()) errs.push('Eit tilbod manglar namn.'); if (!String(o.price || '').trim()) errs.push('Tilbodet «' + (o.name || '') + '» manglar pris.'); });
+    return errs;
+  }
+  function clean(){
+    var d = JSON.parse(JSON.stringify(data));
+    function num(v){ var n = parseFloat(String(v).replace(',','.')); return isNaN(n) ? undefined : n; }
+    d.categories.forEach(function(c){
+      delete c._open;
+      if (!c.id) c.id = slug(c.name.nn);
+      (c.items || []).forEach(function(it){
+        it.price = num(it.price);
+        var w = num(it.withDrink); if (w === undefined) delete it.withDrink; else it.withDrink = w;
+        if (it.note && !String(it.note.nn || '').trim()) delete it.note;
+      });
+      if (c.note && !String(c.note.nn || '').trim()) delete c.note;
+      if (!c.addons) delete c.addons;
+    });
+    ['cheese','bacon','fries','drink'].forEach(function(k){ d.addons[k] = num(d.addons[k]) || 0; });
+    d.offersPerWeek = parseInt(d.offersPerWeek,10) || 2;
+    if (d.event && !String(d.event.name || '').trim()) d.event = null;
+    return d;
+  }
+  function save(){
+    var errs = validate();
+    if (errs.length){ var s = $('saveStatus'); s.className = 'status bad'; s.textContent = errs[0]; return; }
+    var btn = $('saveBtn'); btn.disabled = true; $('saveStatus').className = 'status'; $('saveStatus').textContent = 'Lagrar …';
+    var out = clean();
+    var text = JSON.stringify(out, null, 2) + '\n';
+    // hent ferskaste versjon for å få riktig sha (unngår konflikt)
+    api('GET').then(function(cur){
+      return api('PUT', {message:'Oppdatert frå admin', content:b64e(text), sha:cur.sha, branch:cfg.branch});
+    }).then(function(res){
+      sha = res.content.sha; data = out; normalize(); setDirty(false); renderAll();
+      var s = $('saveStatus'); s.className = 'status ok'; s.textContent = 'Lagra! Live om ca. 1 minutt.';
+    }).catch(function(e){
+      btn.disabled = false;
+      var s = $('saveStatus'); s.className = 'status bad';
+      s.textContent = e.status === 401 || e.status === 403 ? 'Ikkje tilgang til å lagre. Sjekk at nøkkelen har «Contents: Read and write».' : 'Kunne ikkje lagre: ' + e.message;
+    });
+  }
+  $('saveBtn').onclick = save;
+  $('reloadBtn').onclick = function(){ if (dirty && !confirm('Forkaste alle ulagra endringar?')) return; load().catch(function(e){ alert('Feil: ' + e.message); }); };
+
+  /* ---------- Tabs ---------- */
+  $('tabs').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-tab]'); if (!b) return;
+    curTab = b.getAttribute('data-tab');
+    document.querySelectorAll('#tabs button').forEach(function(x){ x.classList.toggle('on', x === b); });
+    ['offers','menu','event','hours'].forEach(function(t){ $('tab-' + t).classList.toggle('hidden', t !== curTab); });
+  });
+
+  /* ---------- Hjelparar for felt ---------- */
+  function slug(s){ return String(s || 'kategori').toLowerCase().replace(/[æ]/g,'ae').replace(/[ø]/g,'o').replace(/[å]/g,'a').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') + '-' + Math.random().toString(36).slice(2,5); }
+  function move(arr, i, d){ var j = i + d; if (j < 0 || j >= arr.length) return; var t = arr[i]; arr[i] = arr[j]; arr[j] = t; }
+  // flerspråkleg felt: nn synleg, resten i "Andre språk"
+  function langField(path, obj, label, multiline){
+    obj = obj || {};
+    var tag = multiline ? 'textarea' : 'input type="text"';
+    var close = multiline ? '</textarea>' : '';
+    function f(l, v){ return multiline ? '<textarea data-path="'+path+'.'+l+'">'+esc(v||'')+'</textarea>' : '<input type="text" data-path="'+path+'.'+l+'" value="'+esc(v||'')+'">'; }
+    var others = LANGS.slice(1).map(function(x){ return '<div><label>'+x[1]+'</label>'+f(x[0], obj[x[0]])+'</div>'; }).join('');
+    return '<label>'+label+'</label>'+f('nn', obj.nn)+'<details><summary>Andre språk (valfritt – tomt viser nynorsk)</summary><div class="row c2">'+others+'</div></details>';
+  }
+  function getPath(root, path){ var p = path.split('.'), o = root; for (var i=0;i<p.length-1;i++){ var k = /^\d+$/.test(p[i]) ? +p[i] : p[i]; if (o[k] == null) o[k] = {}; o = o[k]; } return {o:o, k:p[p.length-1]}; }
+  function bind(root, container){
+    container.querySelectorAll('[data-path]').forEach(function(el){
+      var fn = function(){
+        var t = getPath(root, el.getAttribute('data-path'));
+        var key = /^\d+$/.test(t.k) ? +t.k : t.k;
+        t.o[key] = el.type === 'checkbox' ? el.checked : el.value;
+        setDirty(true);
+      };
+      el.addEventListener('input', fn); el.addEventListener('change', fn);
+    });
+    container.querySelectorAll('[data-act]').forEach(function(b){ b.addEventListener('click', function(){ actions[b.getAttribute('data-act')](b); }); });
+  }
+
+  /* ---------- Tilbod ---------- */
+  function renderOffers(){
+    var h = '<p class="help" style="margin-bottom:14px">Sida viser automatisk eit utval av tilboda kvar veke og byter når veka skiftar (måndag). Tilboda forsvinn søndag kl. 21:00. Legg til fleire tilbod enn du viser samstundes, så roterer dei.</p>';
+    h += '<div class="card"><label>Kor mange tilbod vert viste samstundes?</label><input type="number" min="1" max="10" data-path="offersPerWeek" value="'+esc(data.offersPerWeek)+'" style="max-width:120px"></div>';
+    if (!data.offers.length) h += '<p class="empty">Ingen tilbod endå – trykk «Nytt tilbod».</p>';
+    data.offers.forEach(function(o, i){
+      h += '<div class="item"><div class="head"><b>'+esc(o.name || 'Nytt tilbod')+'</b><span>'+
+        '<button class="small" data-act="offerUp" data-i="'+i+'" title="Flytt opp">↑</button> <button class="small" data-act="offerDown" data-i="'+i+'" title="Flytt ned">↓</button> <button class="small danger" data-act="offerDel" data-i="'+i+'">Slett</button></span></div>'+
+        '<label>Namn</label><input type="text" data-path="offers.'+i+'.name" value="'+esc(o.name)+'">'+
+        '<label>Skildring</label><textarea data-path="offers.'+i+'.desc">'+esc(o.desc)+'</textarea>'+
+        '<div class="row c3"><div><label>Tilbodspris</label><input type="text" data-path="offers.'+i+'.price" value="'+esc(o.price)+'" placeholder="199,-"></div>'+
+        '<div><label>Ordinær pris (valfri)</label><input type="text" data-path="offers.'+i+'.old" value="'+esc(o.old)+'" placeholder="249,-"></div>'+
+        '<div><label>Gjeld (valfri)</label><input type="text" data-path="offers.'+i+'.valid" value="'+esc(o.valid)+'" placeholder="Berre denne veka"></div></div></div>';
+    });
+    h += '<div class="tools"><button class="primary" data-act="offerAdd">+ Nytt tilbod</button></div>';
+    var c = $('tab-offers'); c.innerHTML = h; bind(data, c);
+  }
+
+  /* ---------- Meny ---------- */
+  function renderMenu(){
+    var h = '<p class="help" style="margin-bottom:14px">Endre namn og prisar, legg til nye rettar, eller flytt og slett. «Pris med drikke» er prisen når kunden tek med brus 0,5 l – la feltet stå tomt viss rett ikkje har det.</p>';
+    data.categories.forEach(function(c, ci){
+      h += '<details class="card cat"'+(c._open ? ' open' : '')+' data-ci="'+ci+'"><summary>'+esc(c.name && c.name.nn || 'Ny kategori')+'</summary>'+
+        '<div class="tools" style="margin:8px 0 4px"><button class="small" data-act="catUp" data-i="'+ci+'">↑ Opp</button> <button class="small" data-act="catDown" data-i="'+ci+'">↓ Ned</button> <button class="small danger" data-act="catDel" data-i="'+ci+'">Slett kategori</button></div>'+
+        langField('categories.'+ci+'.name', c.name, 'Kategorinamn')+
+        langField('categories.'+ci+'.note', c.note, 'Merknad øvst i kategorien (valfri)')+
+        '<label class="chk"><input type="checkbox" data-path="categories.'+ci+'.addons"'+(c.addons ? ' checked' : '')+'> Vis tillegg (ost, bacon, pommes) på rettane i denne kategorien</label>'+
+        '<h2 style="margin-top:20px">Rettar</h2>';
+      (c.items || []).forEach(function(it, ii){
+        var p = 'categories.'+ci+'.items.'+ii;
+        h += '<div class="item"><div class="head"><b>'+esc(it.name && it.name.nn || 'Ny rett')+'</b><span>'+
+          '<button class="small" data-act="itemUp" data-i="'+ci+'" data-j="'+ii+'">↑</button> <button class="small" data-act="itemDown" data-i="'+ci+'" data-j="'+ii+'">↓</button> <button class="small danger" data-act="itemDel" data-i="'+ci+'" data-j="'+ii+'">Slett</button></span></div>'+
+          langField(p+'.name', it.name, 'Namn')+
+          '<div class="row c2"><div><label>Pris (kr)</label><input type="number" step="any" inputmode="decimal" data-path="'+p+'.price" value="'+esc(it.price)+'"></div>'+
+          '<div><label>Pris med drikke (kr, valfri)</label><input type="number" step="any" inputmode="decimal" data-path="'+p+'.withDrink" value="'+esc(it.withDrink == null ? '' : it.withDrink)+'"></div></div>'+
+          langField(p+'.note', it.note, 'Merknad under retten (valfri)')+'</div>';
+      });
+      h += '<div class="tools"><button data-act="itemAdd" data-i="'+ci+'">+ Ny rett</button></div></details>';
+    });
+    h += '<div class="tools" style="margin-bottom:22px"><button class="primary" data-act="catAdd">+ Ny kategori</button></div>';
+    h += '<div class="card"><h2>Tillegg til burgerar</h2><div class="row c2">'+
+      '<div><label>Ost (kr)</label><input type="number" step="any" data-path="addons.cheese" value="'+esc(data.addons.cheese)+'"></div>'+
+      '<div><label>Bacon (kr)</label><input type="number" step="any" data-path="addons.bacon" value="'+esc(data.addons.bacon)+'"></div>'+
+      '<div><label>Pommes (kr)</label><input type="number" step="any" data-path="addons.fries" value="'+esc(data.addons.fries)+'"></div>'+
+      '<div><label>Drikke (kr)</label><input type="number" step="any" data-path="addons.drink" value="'+esc(data.addons.drink)+'"></div></div></div>';
+    var c = $('tab-menu'); c.innerHTML = h; bind(data, c);
+    c.querySelectorAll('details.cat').forEach(function(d){ d.addEventListener('toggle', function(){ var k = +d.getAttribute('data-ci'); if (data.categories[k]) data.categories[k]._open = d.open; }); });
+  }
+
+  /* ---------- Arrangement ---------- */
+  function renderEvent(){
+    var ev = data.event, on = !!(ev && ev.name !== undefined && ev !== null);
+    var h = '<p class="help" style="margin-bottom:14px">Arrangementet vert vist i menyen og forsvinn av seg sjølv etter tidspunktet du set under.</p>';
+    if (!ev){
+      h += '<p class="empty">Ingen arrangement er lagt inn.</p><div class="tools"><button class="primary" data-act="eventAdd">+ Legg inn arrangement</button></div>';
+    } else {
+      h += '<div class="card"><label>Namn</label><input type="text" data-path="event.name" value="'+esc(ev.name)+'">'+
+        '<div class="row c2"><div><label>Dato og tid (tekst som vert vist)</label><input type="text" data-path="event.date" value="'+esc(ev.date)+'" placeholder="15. august, kl. 13.30–15.30"></div>'+
+        '<div><label>Stad</label><input type="text" data-path="event.place" value="'+esc(ev.place)+'"></div></div>'+
+        '<label>Aldersgrense / målgruppe (valfri)</label><input type="text" data-path="event.age" value="'+esc(ev.age)+'">'+
+        '<label>Skildring</label><textarea data-path="event.desc">'+esc(ev.desc)+'</textarea>'+
+        '<label>Premie / pris (valfri)</label><input type="text" data-path="event.prize" value="'+esc(ev.prize)+'">'+
+        '<label>Skjul automatisk etter</label><input type="datetime-local" data-path="event.hideAfter" value="'+esc(ev.hideAfter)+'" style="max-width:260px">'+
+        '<div class="tools" style="margin-top:16px"><button class="danger" data-act="eventDel">Fjern arrangementet</button></div></div>';
+    }
+    var c = $('tab-event'); c.innerHTML = h; bind(data, c);
+  }
+
+  /* ---------- Opningstider ---------- */
+  function renderHours(){
+    var hr = data.hours;
+    var h = '<p class="help" style="margin-bottom:14px">Teksten på alle fem språka vert laga automatisk frå desse tidene.</p>'+
+      '<div class="card"><div class="row c3"><div><label>Opnar</label><input type="time" data-path="hours.open" value="'+esc(hr.open)+'"></div>'+
+      '<div><label>Stengjer</label><input type="time" data-path="hours.close" value="'+esc(hr.close)+'"></div>'+
+      '<div><label>Avgrensa mat etter (tom = ingen)</label><input type="time" data-path="hours.foodUntil" value="'+esc(hr.foodUntil)+'"></div></div></div>';
+    var c = $('tab-hours'); c.innerHTML = h; bind(data, c);
+  }
+
+  function renderAll(){ renderOffers(); renderMenu(); renderEvent(); renderHours(); }
+
+  /* ---------- Handlingar ---------- */
+  var actions = {
+    offerAdd: function(){ data.offers.push({name:'',desc:'',old:'',price:'',valid:''}); setDirty(true); renderOffers(); },
+    offerDel: function(b){ var i = +b.dataset.i; if (!confirm('Slette tilbodet «' + (data.offers[i].name || '') + '»?')) return; data.offers.splice(i,1); setDirty(true); renderOffers(); },
+    offerUp: function(b){ move(data.offers, +b.dataset.i, -1); setDirty(true); renderOffers(); },
+    offerDown: function(b){ move(data.offers, +b.dataset.i, 1); setDirty(true); renderOffers(); },
+    catAdd: function(){ data.categories.push({id:slug('kategori'), name:{nn:''}, items:[], _open:true}); setDirty(true); renderMenu(); },
+    catDel: function(b){ var i = +b.dataset.i; if (!confirm('Slette heile kategorien «' + (data.categories[i].name.nn || '') + '» med alle rettane?')) return; data.categories.splice(i,1); setDirty(true); renderMenu(); },
+    catUp: function(b){ move(data.categories, +b.dataset.i, -1); setDirty(true); renderMenu(); },
+    catDown: function(b){ move(data.categories, +b.dataset.i, 1); setDirty(true); renderMenu(); },
+    itemAdd: function(b){ var c = data.categories[+b.dataset.i]; c.items = c.items || []; c.items.push({name:{nn:''}, price:''}); c._open = true; setDirty(true); renderMenu(); },
+    itemDel: function(b){ var c = data.categories[+b.dataset.i], it = c.items[+b.dataset.j]; if (!confirm('Slette «' + (it.name && it.name.nn || '') + '»?')) return; c.items.splice(+b.dataset.j,1); c._open = true; setDirty(true); renderMenu(); },
+    itemUp: function(b){ var c = data.categories[+b.dataset.i]; move(c.items, +b.dataset.j, -1); c._open = true; setDirty(true); renderMenu(); },
+    itemDown: function(b){ var c = data.categories[+b.dataset.i]; move(c.items, +b.dataset.j, 1); c._open = true; setDirty(true); renderMenu(); },
+    eventAdd: function(){ data.event = {name:'',date:'',place:'Krambua',age:'',desc:'',prize:'',hideAfter:''}; setDirty(true); renderEvent(); },
+    eventDel: function(){ if (!confirm('Fjerne arrangementet frå nettsida?')) return; data.event = null; setDirty(true); renderEvent(); }
+  };
+})();
+</script>
+</body>
+</html>
