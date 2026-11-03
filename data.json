@@ -384,13 +384,5 @@
       "valid": ""
     }
   ],
-  "event": {
-    "name": "Fiskekonkurranse",
-    "date": "15. august, kl. 13.30–15.30",
-    "place": "Krambua, sentrumsområdet",
-    "age": "For born t.o.m. 15 år",
-    "desc": "Fisk frå land, innanfor sentrumsområdet. Premiar for mest fisk og tyngste fisk. Gjeldande fiskereglar og minstemål må følgjast, og foreldre har ansvar for eigne born under konkurransen.",
-    "prize": "Gratis å delta – alle deltakarar får premie, og vinnarane får goodiebag!",
-    "hideAfter": "2026-08-15T18:00"
-  }
+  "event": null
 }
